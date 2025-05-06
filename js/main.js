@@ -1,44 +1,49 @@
 function irAIdentificacion(local) {
-    // Guardar local seleccionado en el almacenamiento local
-    localStorage.setItem("localSeleccionado", local);
-    // Redireccionar a pantalla de identificación
-    window.location.href = "identificacion.html";
+  localStorage.setItem("localSeleccionado", local);
+  window.location.href = "identificacion.html";
+}
+
+function volverAlInicio() {
+  window.location.href = "index.html";
+}
+
+document.getElementById("formIdentificacion").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const empresa = document.querySelector('input[name="empresa"]:checked')?.value;
+  const nombre = document.getElementById("nombre").value.trim();
+  const dni = document.getElementById("dni").value.trim();
+  const canvas = document.getElementById("canvas");
+  const mensaje = document.getElementById("mensaje");
+
+  mensaje.textContent = "Validando...";
+
+  if (!empresa || !nombre || !dni || canvas.style.display === "none") {
+    mensaje.textContent = "Por favor complete todos los campos y tome la selfie.";
+    return;
   }
-  function volverAlInicio() {
-    window.location.href = "index.html";
+
+  // Convertir imagen del canvas a base64
+  const selfieBase64 = canvas.toDataURL("image/jpeg");
+
+  // Validar si la función está disponible
+  if (typeof guardarDatosSupabase !== "function") {
+    mensaje.textContent = "❌ Error interno: función guardarDatosSupabase no disponible.";
+    return;
   }
-  document.getElementById("formIdentificacion").addEventListener("submit", async function (e) {
-    e.preventDefault();
-  
-    const empresa = document.querySelector('input[name="empresa"]:checked')?.value;
-    const nombre = document.getElementById("nombre").value.trim();
-    const dni = document.getElementById("dni").value.trim();
-    const canvas = document.getElementById("canvas");
-  
-    const mensaje = document.getElementById("mensaje");
-    mensaje.textContent = "Validando...";
-  
-    if (!empresa || !nombre || !dni || canvas.style.display === "none") {
-      mensaje.textContent = "Por favor complete todos los campos y tome la selfie.";
-      return;
+
+  try {
+    const { error } = await guardarDatosSupabase({ empresa, nombre, dni, selfieBase64 });
+
+    if (error) {
+      mensaje.textContent = "Error al guardar los datos: " + error.message;
+    } else {
+      mensaje.textContent = "✅ Vigilante validado correctamente.";
+      setTimeout(() => {
+        window.location.href = "puestos.html";
+      }, 1500);
     }
-  
-    // Convertir imagen del canvas a base64
-    const selfieBase64 = canvas.toDataURL("image/jpeg");
-  
-    try {
-      const { error } = await guardarDatosSupabase({ empresa, nombre, dni, selfieBase64 });
-  
-      if (error) {
-        mensaje.textContent = "Error al guardar los datos: " + error.message;
-      } else {
-        mensaje.textContent = "✅ Vigilante validado correctamente.";
-        setTimeout(() => {
-          window.location.href = "puestos.html";
-        }, 1500);
-      }
-    } catch (err) {
-      mensaje.textContent = "Error inesperado: " + err.message;
-    }
-  });
-  
+  } catch (err) {
+    mensaje.textContent = "Error inesperado: " + err.message;
+  }
+});
