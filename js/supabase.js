@@ -1,6 +1,9 @@
 // Inicializa Supabase
 const supabaseUrl = 'https://qjefbngewwthawycvutl.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqZWZibmdld3d0aGF3eWN2dXRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxMjA2MTUsImV4cCI6MjA2MTY5NjYxNX0.q4J3bF6oC7x9dhW5cwHr-qtqSSqI_8ju7fHvyfO_Sh0';
+if (!window.supabase) {
+  throw new Error("❌ Supabase JS no está cargado. Verifique que la librería se haya importado.");
+}
 const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 // Función reutilizable para guardar vigilante y selfie en Supabase
