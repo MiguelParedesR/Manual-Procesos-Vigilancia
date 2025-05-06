@@ -51,9 +51,10 @@ document.getElementById('formIdentificacion').addEventListener('submit', async f
     mensaje.innerText = "❌ Error al registrar los datos.";
     return;
   }
-
+  localStorage.setItem("dni", dni); // Guarda el DNI antes de redirigir
   mensaje.innerText = `✅ Bienvenido ${nombre}`;
   setTimeout(() => {
     window.location.href = "puestos.html";
   }, 2000);
+  
 });

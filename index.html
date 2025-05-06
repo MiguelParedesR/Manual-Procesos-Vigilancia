@@ -12,7 +12,7 @@
   <h3>Elija el local donde se encuentra:</h3>
 
   <div class="buttons-container">
-    <button onclick="irAIdentificacion('TPP1')">TPP1</button>
+    
     <button onclick="irAPuestos('TPP1')">TPP1</button>
     <button onclick="irAPuestos('TPP2')">TPP2</button>
     <button onclick="irAPuestos('TPP3')">TPP3</button>
@@ -25,8 +25,8 @@
   <script>
     function irAPuestos(local) {
       localStorage.setItem("localSeleccionado", local);
-      window.location.href = "puestos.html";
+      window.location.href = "identificacion.html"; // esta es la página de validación
     }
   </script>
 </body>
-</html>
+</html
