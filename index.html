@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MANUAL DE PROCESOS - SERVICIO VIGILANCIA</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="index-container fade-in">
+  <h1>MANUAL DE PROCESOS - SERVICIO VIGILANCIA</h1>
+  <h3>Elija el local donde se encuentra:</h3>
+
+  <div class="buttons-container">
+    <button onclick="irAIdentificacion('TPP1')">TPP1</button>
+    <button onclick="irAPuestos('TPP1')">TPP1</button>
+    <button onclick="irAPuestos('TPP2')">TPP2</button>
+    <button onclick="irAPuestos('TPP3')">TPP3</button>
+    <button onclick="irAPuestos('TPP4')">TPP4</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+
+  <script>
+    function irAPuestos(local) {
+      localStorage.setItem("localSeleccionado", local);
+      window.location.href = "puestos.html";
+    }
+  </script>
+</body>
+</html>
