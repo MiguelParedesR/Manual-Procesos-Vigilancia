@@ -264,22 +264,39 @@ funcionesPorPuesto["Llenado"] = `
 // TPP3
 funcionesPorPuesto["Puerta de Ingreso"] = `
   <!-- Puesto: Puerta de ingreso -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA DEVOLUCION DE CONTENEDORES VACÍOS DE DESCARGA DIRECTA DE LA LÍNEA 
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">  INGRESO DE CAMIONES PARA EL DESPACHO DE CONTENEDORES VACÍOS PARA CLIENTES DE EXPORTACION  
  </h2>
   <p style="text-align: justify;">
   </p>
    <h3>Ingreso</h3>
   <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>Cuando el transportista se presente en la puerta de acceso con un contenedor de descarga el AVP verifica que se encuentren en la lista proporcionada de descarga.  </li>
-    <li>AVP revisa antes del ingreso: Extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026 Inspección de camiones. </li>
-    <li>De ser caso de contenedor Reefers verifican el cable conectado al contenedor </li>
-    <li>AVP registra la hora de ingreso, nombre del chofer, licencia, los datos de la unidad y el N° de contenedor y N° de precinto en el formato F-OPESEG-025 Tránsito de contenedores. </li>
-    <li>AVP realiza el registro en aplicación TPP WEB; opción, Op. Vacíos, Ingreso de contenedores, Opción descarga, donde ingresara número de manifiesto y numero de contenedor, placa y licencia de conductor, luego lo registra con click en grabar, de arrojar error informara a CCTV.  </li>
+    <li>AVP solicita los siguientes documentos: Booking, confirmación de pago ITOP, tarjeta de propiedad y licencia de conducir vigentes (Categoría AIII). 
+</li>
+    <li>AVP verifica en el Booking  los siguientes datos: Dirección del almacén (TPP) y la Línea a la que pertenece, en confirmación de pago ITOP impresa verificara que el número de Booking sea el mismo, estos documentos pueden ser impresos o virtual. (Si el documento es físico personal de vigilancia verifica y retorna documento a conductor, no se queda con ningún documento). 
+</li>
+    <li>AVP Verifica número de Booking en lista de programación otorgada a fin de ver fecha y horario de atención, (Ingreso puede ser una hora antes y hora después). 
+</li>
+    <li>AVP realiza en registro en la aplicación, TPP WEB, opción Op. Vacios, Desspacho de contenedor, Asignación, registrar, ingresara los siguientes datos, numero de booking, placa, brevete, foto de chofer, luego dará click en grabar, de tener mensaje de error informara a CCTV.    
+</li>
+    <li>AVP realiza aleatoriamente la Inspección del camión y llenará el formato F-OPESEG-026. 
+</li>
+    <li>AVP registra la hora de ingreso, nombre del chofer, licencia, los datos de la unidad y N° de booking en el formato F-OPESEG-025 Tránsito de contenedores.  
+</li>
+    <li>AVP registra la fecha, hora y placa en EIR (Equipment Interchange Receipt), luego realiza entrega de este a conductor. 
+</li>
   </ul>
   <h3>Salida</h3>
   <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato F-OPSEG-026. </li>
-    <li>AVP registra la salida del transportista en el formato F-OPESEG-025. Tránsito de contenedores     </li>
+    <li>AVP solicita al transportista el siguiente documento: EIR (Equipment Interchange Receipt), el cual debe ser impreso por la Garita de vacíos. 
+</li>
+    <li>En caso de horario extraordinario (17:00 horas) y el transportista no cuente con EIR, el almacenero de turno (Vacíos) será el responsable de la autorización de salida. Para los Reefers, siempre se retirará el contenedor con EIR. 
+</li>
+    <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato  F-OPESEG-026. 
+</li>
+    <li>AVP Adicionalmente en el caso de Reefers  verifican el cable conectado al contenedor. 
+</li>
+    <li>AVP registra la salida del transportista, el N° de contenedor, N° de precinto y N° EIR en el formato F-OPESEG-025 Tránsito de contenedores. 
+</li>
   </ul>
 `;
 
@@ -288,14 +305,34 @@ funcionesPorPuesto["PDT-3"] = `
   <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA DEVOLUCION DE CONTENEDORES VACÍOS DE DESCARGA DIRECTA DE LA LÍNEA 
  </h2>
   <p style="text-align: justify;">
+
   </p>
    <h3>Ingreso</h3>
   <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>Cuando el transportista se presente en la puerta de acceso con un contenedor de descarga el AVP verifica que se encuentren en la lista proporcionada de descarga.  </li>
-    <li>AVP revisa antes del ingreso: Extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026 Inspección de camiones. </li>
+    <li>Cuando el transportista se presente en la puerta de acceso con un contenedor de descarga el AVP verifica que se encuentren en la lista proporcionada de descarga.</li>
+    <li>AVP revisa antes del ingreso: Extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026 Inspección de camiones.</li>
     <li>De ser caso de contenedor Reefers verifican el cable conectado al contenedor </li>
     <li>AVP registra la hora de ingreso, nombre del chofer, licencia, los datos de la unidad y el N° de contenedor y N° de precinto en el formato F-OPESEG-025 Tránsito de contenedores. </li>
     <li>AVP realiza el registro en aplicación TPP WEB; opción, Op. Vacíos, Ingreso de contenedores, Opción descarga, donde ingresara número de manifiesto y numero de contenedor, placa y licencia de conductor, luego lo registra con click en grabar, de arrojar error informara a CCTV.  </li>
+  </ul>
+  <h3>Salida</h3>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+    <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato F-OPSEG-026. </li>
+    <li>AVP registra la salida del transportista en el formato F-OPESEG-025. Tránsito de contenedores.</li>
+  </ul>
+
+
+
+   <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA DEVOLUCIÓN DE CONTENEDORES VACÍOS DE CLIENTES.</h2>
+  <p style="text-align: justify;">
+  </p>
+   <h3>Ingreso</h3>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+    <li>Cuando el transportista se presente en la puerta de acceso el contenedor de devolución, AVP solicita los siguientes documentos: Memo de Devolución (emitido por Greenandes, Amerandes, Yang Ming, Cosco o China Shipping, Eveergreen, SpaceWase, Emkay, One, OOCL), confirmación de Pago ITOP, Tarjeta de propiedad y licencia de conducir vigente (Categoría AIII).</li>
+    <li>AVP verifica en el Memo de devolución el cual puede ser impresa o virtual, emitido por la agencia marítima, los siguientes datos: El nombre del Cliente, Dirección del almacén (TPP), fecha de validez vigente BL y N.º de contenedor, verifica en confirmación de pago ITOP el cual puede ser impresa o virtual que el número de BL coincida con el del Memo de devolución. (Si el documento es físico, personal de vigilancia verifica y retorna documento al conductor, no se queda con ningún documento).</li>
+    <li>AVP realiza el registro en aplicación TPP WEB; Opción Op. Vacios, Opción devolución, donde ingresara el número de contenedor aparecerá el número de BL en pantalla, AVP verificara que sea el mismo que figura en Memo de devolución, placa, transportes, nombre de conductor, deberá adjuntar foto de conductor, a continuación, dará click en grabar.</li>
+    <li>Adicionalmente en el caso de Reefers verifican el cable conectado al contenedor. </li>
+    <li>AVP registra la hora de ingreso, nombre chofer, licencia, los datos de la unidad y el contenedor en el formato F-OPESEG-25 Tránsito de contenedores.</li>
   </ul>
   <h3>Salida</h3>
   <ul style="text-align: justify; padding-left: 1.2em;">
@@ -306,8 +343,28 @@ funcionesPorPuesto["PDT-3"] = `
 
 funcionesPorPuesto["Puerta de Salida"] = `
   <!-- Puesto: Puerta de salida -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">Manual de Funciones</h2>
-  <!-- Similar estructura que los anteriores -->
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">  INGRESO DE CAMIONES PARA EL DESPACHO DE CONTENEDORES VACÍOS PARA CLIENTES DE EXPORTACION  
+ </h2>
+  <p style="text-align: justify;">
+  </p>
+   <h3>Ingreso</h3>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+    <li>AVP solicita los siguientes documentos: Booking, confirmación de pago ITOP, tarjeta de propiedad y licencia de conducir vigentes (Categoría AIII). 
+
+  </ul>
+  <h3>Salida</h3>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+    <li>AVP solicita al transportista el siguiente documento: EIR (Equipment Interchange Receipt), el cual debe ser impreso por la Garita de vacíos. 
+</li>
+    <li>En caso de horario extraordinario (17:00 horas) y el transportista no cuente con EIR, el almacenero de turno (Vacíos) será el responsable de la autorización de salida. Para los Reefers, siempre se retirará el contenedor con EIR. 
+</li>
+    <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato  F-OPESEG-026. 
+</li>
+    <li>AVP Adicionalmente en el caso de Reefers  verifican el cable conectado al contenedor. 
+</li>
+    <li>AVP registra la salida del transportista, el N° de contenedor, N° de precinto y N° EIR en el formato F-OPESEG-025 Tránsito de contenedores. 
+</li>
+  </ul>
 `;
 
 
