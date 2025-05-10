@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MANUAL DE PROCESOS - SERVICIO VIGILANCIA</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-  <div class="index-container fade-in">
-  <h1>MANUAL DE PROCESOS - SERVICIO VIGILANCIA</h1>
-  <h3>Elija el local donde se encuentra:</h3>
+  <!-- Encabezado con logo 
+  <header class="logo-header">
+    <img src="assets/logo.png" alt="Logo de la empresa" class="logo-img" />
+  </header>-->
+  <div class="index-main fade-in">
+    <h1 class="index-title">MANUAL DE PROCESOS</h1>
+    <h2 class="index-subtitle">SERVICIO DE VIGILANCIA</h2>
+    <p class="index-instruccion">Seleccione el local donde se encuentra:</p>
 
-  <div class="buttons-container">
-    
-    <button onclick="irAPuestos('TPP1')">TPP1</button>
-    <button onclick="irAPuestos('TPP2')">TPP2</button>
-    <button onclick="irAPuestos('TPP3')">TPP3</button>
-    <button onclick="irAPuestos('TPP4')">TPP4</button>
+    <div class="steps-container">
+      <div class="step-card" onclick="crackAndRedirect(this, 'TPP1')">
+        <div class="step-icon">🏢</div>
+        <span class="step-number">TPP1</span>
+      </div>
+      <div class="step-card" onclick="crackAndRedirect(this, 'TPP2')">
+        <div class="step-icon">🏢</div>
+        <span class="step-number">TPP2</span>
+      </div>
+      <div class="step-card" onclick="crackAndRedirect(this, 'TPP3')">
+        <div class="step-icon">🏢</div>
+        <span class="step-number">TPP3</span>
+      </div>
+      <div class="step-card" onclick="crackAndRedirect(this, 'TPP4')">
+        <div class="step-icon">🏢</div>
+        <span class="step-number">TPP4</span>
+      </div>
+    </div>
   </div>
-</div>
 
-<script src="js/main.js"></script>
-
+  <script src="js/main.js"></script>
   <script>
-    function irAPuestos(local) {
-      localStorage.setItem("localSeleccionado", local);
-      window.location.href = "identificacion.html"; // esta es la página de validación
+    function crackAndRedirect(element, local) {
+      element.classList.add("crack-effect");
+      setTimeout(() => {
+        localStorage.setItem("localSeleccionado", local);
+        window.location.href = "identificacion.html";
+      }, 600); // Espera a que termine la animación (~0.5s)
     }
   </script>
 </body>
-</html
+
+</html>

@@ -6,7 +6,7 @@ function irAIdentificacion(local) {
 function volverAlInicio() {
   window.location.href = "index.html";
 }
-
+    
 document.getElementById("formIdentificacion").addEventListener("submit", async function (e) {
   e.preventDefault();
 
