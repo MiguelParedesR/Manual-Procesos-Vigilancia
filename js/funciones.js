@@ -3,7 +3,67 @@ const funcionesPorPuesto = {};
 // Funciones por puesto
 
 // TPP1
+
+// funciones.js actualizado con checklist y modal de confirmación
+
 funcionesPorPuesto["Puerta de ingreso Viru"] = `
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN (DESPACHOS)</h2>
+  <div class="checklist-tabla">
+    <label class="card-checklist"><input type="checkbox" /> AVP solicita los siguientes documentos: Autorización de Retiro con fecha actualizada, tarjeta de propiedad, licencia de conducir vigente (Categoría AIII), Guía de Remisión.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP verifica, de ser Autorización de Retiro Física los siguientes datos: El Stickers (holograma de TPP), sello y firma del agente de aduanas que coincida con el nombre de la Agencia de Aduanas en la Autorización, Sello de facturación TPP.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP deberá llamar vía telefónica a Operador de CCTV dando datos de Autorización de Retiro y de Unidad: Número de Holograma, Número de AR, Placa de unidad, esperando conformidad.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP verifica identidad del chofer con RENIEC y captura selfie para validación facial.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP verifica vehículo en SUNARP con número de placa y realiza inspección visual.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP escanea código QR o ingresa IDAR manual para validar datos del retiro.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP verifica coincidencia entre documentos físicos y digitales, adjunta evidencias y reporta discrepancias.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP revisa extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP registra hora, unidad, chofer, licencia, N° de autorización y contenedor en F-OPESEG-025.</label>
+  </div>
+`;
+
+// Modal de checklist completado
+function mostrarModalChecklistCompletado() {
+  const modal = document.createElement("div");
+  modal.className = "modal-checklist-final fade-in";
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="emoji">😊</div>
+      <p class="mensaje">¡Pasos del proceso concluido!</p>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  setTimeout(() => {
+    modal.remove();
+  }, 3000);
+}
+
+// Revisión de checklist
+function revisarChecklistFinal() {
+  const checkboxes = document.querySelectorAll('.card-checklist input[type="checkbox"]');
+  const todosMarcados = [...checkboxes].every(chk => chk.checked);
+  if (todosMarcados) {
+    mostrarModalChecklistCompletado();
+  }
+}
+
+// Listener global para todos los checkboxes
+// ✅ Usar 'change' en lugar de 'click' para detectar correctamente cuando se marca un checkbox
+document.addEventListener("change", (e) => {
+  if (e.target.matches('.card-checklist input[type="checkbox"]')) {
+    revisarChecklistFinal();
+  }
+});
+
+
+
+
+
+
+
+/*funcionesPorPuesto["Puerta de ingreso Viru"] = `
+ <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN (DESPACHOS)</h2>
+  <div class="checklist-tabla">
+
   <!-- Puesto: Puerta de ingreso Viru -->
   <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN(DESPACHOS) </h2>
   <ul style="text-align: justify; padding-left: 1.2em;">
@@ -42,7 +102,11 @@ funcionesPorPuesto["Puerta de ingreso Viru"] = `
   <li>AVP revisa antes del ingreso: extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026. </li>
   <li>AVP registra los datos del vehículo, chofer y la descripción de la mercadería indicando el N.º de bultos en el formato F-OPESEG-025 Tránsito de Contenedores. </li>
   </ul>
-  `;
+  </div>
+
+  `;*/
+ 
+
 
 funcionesPorPuesto["Puerta de ingreso Oceanica"] = `
   <!-- Puesto: Puerta de ingreso Oceanica -->

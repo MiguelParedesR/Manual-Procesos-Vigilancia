@@ -24,3 +24,9 @@ if (puesto && funcionesPorPuesto[puesto]) {
 function volverAPuestos() {
   window.location.href = "puestos.html";
 }
+  // Delegación de eventos para los checkboxes del checklist
+document.addEventListener("change", (e) => {
+  if (e.target.matches('.card-checklist input[type="checkbox"]')) {
+    revisarChecklistFinal();
+  }
+});

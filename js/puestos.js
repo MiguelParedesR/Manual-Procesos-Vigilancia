@@ -56,4 +56,16 @@ const puestosPorLocal = {
     localStorage.setItem("puestoSeleccionado", puesto);
     window.location.href = "puesto.html";
   }
-  
+  // Activar los listeners después de renderizar el contenido dinámico
+setTimeout(() => {
+  document.querySelectorAll('.card-checklist input[type="checkbox"]').forEach(chk => {
+    chk.addEventListener('change', revisarChecklistFinal);
+  });
+}, 100); // Pequeño retardo para asegurar que el contenido ya esté en el DOM
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("change", (e) => {
+    if (e.target.matches('.card-checklist input[type="checkbox"]')) {
+      revisarChecklistFinal();
+    }
+  });
+});
