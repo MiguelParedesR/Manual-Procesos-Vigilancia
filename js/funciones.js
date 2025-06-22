@@ -1,4 +1,5 @@
 // funciones.js
+// Agrega esto al inicio de funciones.js
 const funcionesPorPuesto = {};
 // Funciones por puesto
 
@@ -9,15 +10,55 @@ const funcionesPorPuesto = {};
 funcionesPorPuesto["Puerta de ingreso Viru"] = `
   <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN (DESPACHOS)</h2>
   <div class="checklist-tabla">
+    <ul style="text-align: justify; padding-left: 1.2em;">
+    <label class="card-checklist"><input type="checkbox" /> Valida AR QR: AR, tarjeta de propiedad, licencia de conducir vigente (Categoría AIII), Guía de Remisión, SCTR.</label>
+    <label class="card-checklist"><input type="checkbox" /> De ser AR Física, valida: El Stickers (holograma de TPP), sello y firma del agente de aduanas que coincida con el nombre de la Agencia de Aduanas en la Autorización, Sello de facturación TPP.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP deberá llamar vía telefónica a Operador de CCTV dando datos de AR Fisica y UT: N° de Holograma, N° de AR, Placa UT.</label>
+    <label class="card-checklist"><input type="checkbox" /> Valida identidad del chofer con RENIEC y captura selfie para validación facial.</label>
+    <label class="card-checklist"><input type="checkbox" /> Valida vehículo en SUNARP con número de placa</label>
+    <label class="card-checklist"><input type="checkbox" /> Para el AR QR: escanea código QR o ingresa IDAR manual para validar datos del retiro.</label>
+    <label class="card-checklist"><input type="checkbox" /> Valida documentos físicos y digitales.</label>
+    <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+    <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+    </ul>
+  </div>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE EXPORTACION (EMBARQUE)</h2>
+  <div class="checklist-tabla">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox" /> Valida si se encuentra en lista (nombrada), espera confirmacion de CCTV.</label>
+  <label class="card-checklist"><input type="checkbox" /> Solicita documentos: tarjeta de propiedad, licencia de conducir vigente (Categoría AIII).</label>
+  <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+  </ul>
+  </div>
+  
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON CONTENEDORES LLENOS DE DESCARGA DE IMPORTACION</h2>
+  <div class="checklist-tabla">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox" /> Solicita ticket de pesaje (APMT o DPW), verifica N° de contenedor y precinto, corrobora listado otorgado y si esta seleccionado para inspección SINI resaltándolo.</label>
+  <label class="card-checklist"><input type="checkbox" /> Solicita tarjeta de propiedad y licencia de conducir vigente (Categoría AIII).</label>
+  <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox" /> Verifica cable conectado al contenedor (Reefers).</label>
+  <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+  </ul>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON MERCADERÍA PARA SER LLENADO EN TPP </h2>
+  <div class="checklist-tabla">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox" /> Solicita Booking, Guía de Remisión del Cliente y Guía de Remisión del Transportista (impreso o digital).</label>
+  <label class="card-checklist"><input type="checkbox" /> Verifica en guías: Dirección del almacén (TPP), placa del vehículo y descripción de la mercadería.</label>
+  <label class="card-checklist"><input type="checkbox" /> Si no cuenta con Booking, solicita correo que autoriza el ingreso.</label>
+  <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+  </ul>
+  </div>
+`;
+
+funcionesPorPuesto["Puerta de ingreso Oceanica"] = `
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN (DESPACHOS)</h2>
+  <div class="checklist-tabla">
     <label class="card-checklist"><input type="checkbox" /> AVP solicita los siguientes documentos: Autorización de Retiro con fecha actualizada, tarjeta de propiedad, licencia de conducir vigente (Categoría AIII), Guía de Remisión.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP verifica, de ser Autorización de Retiro Física los siguientes datos: El Stickers (holograma de TPP), sello y firma del agente de aduanas que coincida con el nombre de la Agencia de Aduanas en la Autorización, Sello de facturación TPP.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP deberá llamar vía telefónica a Operador de CCTV dando datos de Autorización de Retiro y de Unidad: Número de Holograma, Número de AR, Placa de unidad, esperando conformidad.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP verifica identidad del chofer con RENIEC y captura selfie para validación facial.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP verifica vehículo en SUNARP con número de placa y realiza inspección visual.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP escanea código QR o ingresa IDAR manual para validar datos del retiro.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP verifica coincidencia entre documentos físicos y digitales, adjunta evidencias y reporta discrepancias.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP revisa extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
-    <label class="card-checklist"><input type="checkbox" /> AVP registra hora, unidad, chofer, licencia, N° de autorización y contenedor en F-OPESEG-025.</label>
   </div>
 `;
 
@@ -34,7 +75,7 @@ function mostrarModalChecklistCompletado() {
   document.body.appendChild(modal);
   setTimeout(() => {
     modal.remove();
-  }, 3000);
+  }, 1000);
 }
 
 // Revisión de checklist
@@ -56,81 +97,22 @@ document.addEventListener("change", (e) => {
 
 
 
-
-
-
-
-/*funcionesPorPuesto["Puerta de ingreso Viru"] = `
- <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN (DESPACHOS)</h2>
+funcionesPorPuesto["Puerta de ingreso Peatonal - Garita"] = `
+  <!-- Puesto: Puerta de ingreso Peatonal - Garita -->
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES</h2>
   <div class="checklist-tabla">
-
-  <!-- Puesto: Puerta de ingreso Viru -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN(DESPACHOS) </h2>
   <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP solicita los siguientes documentos: Autorización de Retiro con fecha actualizada, tarjeta de propiedad, licencia de conducir vigente (Categoría AIII), Guía de Remisión.</li>
-  <li>AVP Verifica, de ser Autorización de Retiro Física los siguientes datos: El Stickers (holograma de TPP), sello y firma del agente de aduanas que coincida con él con el nombre de la Agencia de Aduanas en la Autorización, Sello de facturación TPP. </li>
-  <li>AVP deberá llamar vía telefónica a Operador de CCTV dando datos de Autorización de Retiro y de Unidad: Número de Holograma, Número de AR, Placa de unidad, esperando conformidad de la información para su ingreso. </li>
-  <li>AVP a través del aplicativo de Reconocimiento facial de la RENIEC debe verificar la identidad del chofer, ingresando el N° de su DNI y haciendo una captura del rostro del conductor esperando la validación del rostro y los datos, de ser correcto otorgará el acceso caso contrario, denegará el acceso y reportara al centro de control, quienes verificaran los datos correspondientes. </li>
-  <li>AVP antes del ingreso debe verificar a través del aplicativo SUNARP, la autenticidad del vehículo ingresando el número de placa de la unidad, obteniendo los datos de la unidad, contrastando el color del vehículo, la marca de la unidad. Asimismo, debe realizar una inspección minuciosa de placa (sticker), números, letras simétricos y contornos. De estar conforme dará el ingreso. </li>
-  <li>Cuando transportista presente Autorización de retiro Portal Cliente con QR la cual puede ser impresa o virtual, AVP deberá escanear código QR o puede digitar el número de código IDAR el cual figura en AR Portal, luego ingresara los siguientes datos: Placa, Numero de Licencia dará click en validar aparecerá en pantalla datos completos del retiro.</li>
-  <li>AVP debe verificar que datos en físico coincidan, debe adjuntas print de facial y sunarp, si aplicación arrojara que datos son incorrectos u otro mensaje de error no permitirá el ingreso de la unidad informando de inmediato a Supervisor de Seguridad y/o a Operador de CCTV. </li>
-  <li>AVP revisa antes del ingreso: extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026. </li>
-  <li>AVP registra la hora de ingreso, los datos de la unidad, chofer, licencia y el N° de autorización y N° del contenedor en el formato F-OPESEG-025 Tránsito de contenedores.</li>
-  </ul>
-
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS PARA EXPORTACIÓN(Embarques)</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>Cuando el transportista se presente en la puerta de acceso de llenos, AVP verifica que el transporte se encuentre en la lista proporcionada, espera confirmación de CCTV para su ingreso a fin de que CCTV verifique GPS activo de UT.  </li>
-  <li>AVP solicita al transportista los siguientes documentos: tarjeta de propiedad, licencia de conducir vigente (Categoría AIII). </li>
-  <li>AVP revisa antes del ingreso: extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026. </li>
-  <li>AVP registra la hora de ingreso, los datos de la unidad, chofer, licencia F-OPESEG-025 Tránsito de contenedores. </li>
-  </ul>
-
-<h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON CONTENEDORES LLENOS DE DESCARGA DE IMPORTACION</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP solicita al transportista los siguientes documentos: ticket de pesaje (APM Terminals o DP World), verificando el N° de contenedor y el precinto, asimismo corrobora que el contenedor se encuentre en el listado otorgado y si esta seleccionado para inspección SINI resaltándolo, tarjeta de propiedad y licencia de conducir vigente (Categoría AIII), Si contenedor no cuenta con el precinto no permitirá el ingreso de la unidad, esperando autorización. </li>
-  <li>AVP realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026. </li>
-  <li>AVP Adicionalmente en el caso de Reefers verifican el cable conectado al contenedor. </li>
-  <li>AVP registra lo siguiente: hora de ingreso del vehículo, nombre del chofer, licencia de conducir, placa del vehículo, N.º de contenedor y N° de precinto en el formato F-OPESEG-025 Tránsito de Contenedores cuando se trata de Mercadería suelta se indica el N.º de bultos o maquinaria. </li>
-  </ul>
-
-<h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON MERCADERÍA PARA SER LLENADO EN TPP </h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP solicita al transportista los siguientes documentos: Booking, Guía de Remisión del Cliente y Guía de Remisión del Transportista los cuales pueden ser impreso o digitales. </li>
-  <li>AVP verifica en la guía de remisión del cliente y del transportista los siguientes datos: Dirección del almacén (TPP), placa del vehículo y la descripción de la mercadería, luego de la verificación devuelve documentación a conductor no quedándose con ningún documento. </li>
-  <li>En el caso el transportista no cuente con el Booking, AVP, solicita el correo que autoriza el ingreso, para proceder con el ingreso. </li>
-  <li>AVP revisa antes del ingreso: extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026. </li>
-  <li>AVP registra los datos del vehículo, chofer y la descripción de la mercadería indicando el N.º de bultos en el formato F-OPESEG-025 Tránsito de Contenedores. </li>
+  <label class="card-checklist"><input type="checkbox" /> Solicita: DNI, Licencia de Conducir o Pasaporte, motivo de la visita, nombre de la persona a visitar y nombre de la empresa a la que pertenece.</label>
+  <label class="card-checklist"><input type="checkbox" /> Si recibe visita no anunciada, comunica con Supervisor de seguridad y/o asistente de seguridad para autorización.</label>
+  <label class="card-checklist"><input type="checkbox" /> Verifica identidad del visitante con Reconocimiento facial de la Reniec, ingresando N° de DNI y captura del rostro.</label>
+  <label class="card-checklist"><input type="checkbox" /> Realiza registro en sistema de seguridad de ingreso y salida.</label>
+  <label class="card-checklist"><input type="checkbox" /> Entrega pase correspondiente al visitante y papeleta de ingreso (F-OPESEG-023).</label>
+  <label class="card-checklist"><input type="checkbox" /> Indica vías de acceso y que debe portar el pase en lugar visible.</label>
   </ul>
   </div>
 
-  `;*/
- 
-
-
-funcionesPorPuesto["Puerta de ingreso Oceanica"] = `
-  <!-- Puesto: Puerta de ingreso Oceanica -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">Manual de Funciones</h2>
-
-  <h3>1. Objetivo del Puesto</h3>
-  <p style="text-align: justify;">
-    Describir las funciones y responsabilidades asignadas al vigilante que cumple tareas en el puesto de <strong>Puerta de ingreso Oceanica</strong>.
-  </p>
-  <!-- Más detalles según el puesto -->
-`;
-
-funcionesPorPuesto["Puerta de ingreso Peatonal - Garita"] = `
-  <!-- Puesto: Puerta de ingreso Peatonal - Garita -->
-   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>AVP acceso peatonal solicita DNI, Licencia de Conducir o Pasaporte, consultando el motivo de la visita, el nombre de la persona a visitar y el nombre de la empresa a la que pertenece.</li>
-    <li>Si AVP, recibe una visita no anunciada se comunica con el Supervisor de seguridad y/o el asistente de seguridad y estos a su vez solicitan confirmación con el área visitada para la autorización correspondiente, El área visitada regulariza con el envío de un correo. </li>
-    <li>AVP a través del aplicativo de Reconocimiento facial de la Reniec debe verificar la identidad del visitante, ingresando el N° de su DNI y haciendo una captura del rostro, esperando la validación del rostro y los datos, de ser correcto otorgará el acceso, realiza el registro en sistema de seguridad ingreso y posterior salida, caso contrario, denegará el acceso y reportara al centro de control, quienes verificaran los datos correspondientes. </li>
-    <li>AVP realiza el registro en sistema de seguridad acceso.</li>
-    <li>AVP responsable del acceso peatonal entrega el pase correspondiente al visitante y la papeleta de ingreso de acuerdo con el formato electrónico F-OPESEG-023 Papeleta de Ingreso, indicándole las vías de acceso y que debe portar el pase en lugar visible. (El visitante no puede salir a la parte externa del Terminal de Almacenamiento con el pase de visita, deberá devolverlo y solicitar nuevamente el pase si desea reingresar a las instalaciones de TPP). </li>
-  </ul>
-
   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE CLIENTES</h2>
+  <div class="checklist-tabla">
   <ul style="text-align: justify; padding-left: 1.2em;">
     <li>AVP consulta el motivo del ingreso, verificando la información compartida vía teams el Reporte de planificación o través de un correo electrónico (solicita autorización a asistente de seguridad, supervisor de seguridad o CCTV), nombre de la empresa a la que pertenece, solicitando los siguientes documentos: Documento Nacional de Identidad - DNI, fotochecks de la entidad a la que pertenece, Carnet de Aduana (vigente), Licencia de Conducir y/o documentos que sustente el trámite en ventanilla. </li>
     <li>AVP a través del aplicativo de Reconocimiento facial de la Reniec debe verificar la identidad del Cliente, ingresando el N° de su DNI y haciendo una captura del rostro del conductor, esperando la validación del rostro y los datos, de ser correcto otorgará el acceso, realiza el registro en sistema de seguridad ingreso y posterior salida, caso contrario, denegará el acceso y reportara al centro de control, quienes verificaran los datos correspondientes. </li>

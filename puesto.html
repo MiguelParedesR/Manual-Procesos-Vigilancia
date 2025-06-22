@@ -20,9 +20,10 @@
     <button class="btn-retorno" onclick="volverAlInicio()">← Volver al menú principal</button>
   </div>
 
-  <script src="js/main.js"></script>
-  <script src="js/funciones.js"></script> <!-- ✅ RUTA CORREGIDA -->
-  <script src="js/puesto.js"></script>
+  <!-- ORDEN CORRECTO DE LOS SCRIPTS -->
+  <script src="js/funciones.js"></script> <!-- 1. Define funcionesPorPuesto y revisarChecklistFinal -->
+    <script src="js/puesto.js"></script>     <!-- 3. Usa funciones ya definidas en los anteriores -->
+  <script src="js/main.js"></script>       <!-- 2. Funciones globales como volverAlInicio() -->
 </body>
 
 </html>

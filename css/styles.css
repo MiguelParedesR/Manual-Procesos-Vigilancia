@@ -79,18 +79,24 @@
     counter-reset: item;
 }
 
-/* Botón de retorno */
 /* Botones en las esquinas */
 .button-container {
     position: fixed;
-    top: 20px;
     left: 20px;
     right: 20px;
-    bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    bottom: 20px;
+    top: 20px;
+    pointer-events: none; /* 🛑 IMPORTANTE para permitir clics en elementos debajo */
+
 }
+.btn-retorno,
+.btn-volver {
+  pointer-events: auto; /* ✅ Para que estos botones sí reciban clic */
+}
+
 
 /* Botón de retorno */
 .btn-retorno {
