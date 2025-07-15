@@ -58,8 +58,230 @@ funcionesPorPuesto["Puerta de ingreso Viru"] = `
 funcionesPorPuesto["Puerta de ingreso Oceanica"] = `
   <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN (DESPACHOS)</h2>
   <div class="checklist-tabla">
-    <label class="card-checklist"><input type="checkbox" /> AVP solicita los siguientes documentos: Autorización de Retiro con fecha actualizada, tarjeta de propiedad, licencia de conducir vigente (Categoría AIII), Guía de Remisión.</label>
+    <ul style="text-align: justify; padding-left: 1.2em;">
+    <label class="card-checklist"><input type="checkbox" /> Valida AR QR: AR, tarjeta de propiedad, licencia de conducir vigente (Categoría AIII), Guía de Remisión, SCTR.</label>
+    <label class="card-checklist"><input type="checkbox" /> De ser AR Física, valida: El Stickers (holograma de TPP), sello y firma del agente de aduanas que coincida con el nombre de la Agencia de Aduanas en la Autorización, Sello de facturación TPP.</label>
+    <label class="card-checklist"><input type="checkbox" /> AVP deberá llamar vía telefónica a Operador de CCTV dando datos de AR Fisica y UT: N° de Holograma, N° de AR, Placa UT.</label>
+    <label class="card-checklist"><input type="checkbox" /> Valida identidad del chofer con RENIEC y captura selfie para validación facial.</label>
+    <label class="card-checklist"><input type="checkbox" /> Valida vehículo en SUNARP con número de placa</label>
+    <label class="card-checklist"><input type="checkbox" /> Para el AR QR: escanea código QR o ingresa IDAR manual para validar datos del retiro.</label>
+    <label class="card-checklist"><input type="checkbox" /> Valida documentos físicos y digitales.</label>
+    <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+    <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+    </ul>
   </div>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE EXPORTACION (EMBARQUE)</h2>
+  <div class="checklist-tabla">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox" /> Valida si se encuentra en lista (nombrada), espera confirmacion de CCTV.</label>
+  <label class="card-checklist"><input type="checkbox" /> Solicita documentos: tarjeta de propiedad, licencia de conducir vigente (Categoría AIII).</label>
+  <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+  </ul>
+  </div>
+  
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON CONTENEDORES LLENOS DE DESCARGA DE IMPORTACION</h2>
+  <div class="checklist-tabla">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox" /> Solicita ticket de pesaje (APMT o DPW), verifica N° de contenedor y precinto, corrobora listado otorgado y si esta seleccionado para inspección SINI resaltándolo.</label>
+  <label class="card-checklist"><input type="checkbox" /> Solicita tarjeta de propiedad y licencia de conducir vigente (Categoría AIII).</label>
+  <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox" /> Verifica cable conectado al contenedor (Reefers).</label>
+  <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+  </ul>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON MERCADERÍA PARA SER LLENADO EN TPP </h2>
+  <div class="checklist-tabla">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox" /> Solicita Booking, Guía de Remisión del Cliente y Guía de Remisión del Transportista (impreso o digital).</label>
+  <label class="card-checklist"><input type="checkbox" /> Verifica en guías: Dirección del almacén (TPP), placa del vehículo y descripción de la mercadería.</label>
+  <label class="card-checklist"><input type="checkbox" /> Si no cuenta con Booking, solicita correo que autoriza el ingreso.</label>
+  <label class="card-checklist"><input type="checkbox" /> Revisa: extintor, botiquín, EPP del chofer e inspecciona camión, llenando aleatoriamente F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox" /> Registra datos solicitados en formato F-OPESEG-025.</label>
+  </ul>
+  </div>
+`;
+funcionesPorPuesto["Puerta de ingreso Peatonal - Garita"] = `
+  <!-- Puesto: Puerta de ingreso Peatonal - Garita -->
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES</h2>
+  <div class="checklist-tabla">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox" /> Solicita: DNI, Licencia de Conducir o Pasaporte, motivo de la visita, nombre de la persona a visitar y nombre de la empresa a la que pertenece.</label>
+  <label class="card-checklist"><input type="checkbox" /> Si recibe visita no anunciada, comunica con Supervisor de seguridad y/o asistente de seguridad para autorización.</label>
+  <label class="card-checklist"><input type="checkbox" /> Verifica identidad del visitante con Reconocimiento facial de la Reniec, ingresando N° de DNI y captura del rostro.</label>
+  <label class="card-checklist"><input type="checkbox" /> Realiza registro en sistema de seguridad de ingreso y salida.</label>
+  <label class="card-checklist"><input type="checkbox" /> Entrega pase correspondiente al visitante y papeleta de ingreso (F-OPESEG-023).</label>
+  <label class="card-checklist"><input type="checkbox" /> Indica vías de acceso y que debe portar el pase en lugar visible.</label>
+  </ul>
+  </div>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE CLIENTES</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+    <div class="checklist-tabla">
+    <label class="card-checklist"><input type="checkbox" />Consulta motivo de ingreso, verifica la informacion compartida via teams o a traves de un correo electronico</label>
+    <label class="card-checklist"><input type="checkbox" />Solicita los siguientes documentos: Documento Nacional de Identidad - DNI, fotochecks de la entidad a la que pertenece, Carnet de Aduana (vigente), Licencia de Conducir y/o documentos que sustente el trámite en ventanilla.</label>
+    <label class="card-checklist"><input type="checkbox" />Verifica identidad del cliente con Reconocimiento facial de la Reniec, ingresando N° de DNI y captura del rostro.</label>
+  </ul>
+  
+
+   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE PROVEEDORES</h2>
+   <ul style="text-align: justify; padding-left: 1.2em;">
+   <div class="checklist-tabla">
+    <label class="card-checklist"><input type="checkbox" />Solicita los siguientes documentos: Documento Nacional de Identidad - DNI, fotochecks de la entidad a la que pertenece, Carnet de Aduana (vigente), Licencia de Conducir y/o documentos que sustente el trámite en ventanilla.</label>
+    <label class="card-checklist"><input type="checkbox" />Verifica identidad del proveedor con Reconocimiento facial de la Reniec, ingresando N° de DNI y captura del rostro.</label>
+    <label class="card-checklist"><input type="checkbox" />Realiza el registro en sistema de seguridad</label>
+    <label class="card-checklist"><input type="checkbox" />Realiza el registro en sistema de seguridad</label> 
+    <label class="card-checklist"><input type="checkbox" />Solicita Guias de Remision, si cuenta con material o producto a dejar.</label>
+  </ul>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE AUTORIDADES</h2>
+   <ul style="text-align: justify; padding-left: 1.2em;">
+   <div class="checklist-tabla">  
+  <label class="card-checklist"><input type="checkbox" />Para autoridades tales como SENASA, SUNAT, FISCALIA, DIRANDRO, MTC, MINTRA, BOE entre otros; solicita DNI, fotocheck de entidad a la que pertence y consulta motivo de ingreso</label>
+  <label class="card-checklist"><input type="checkbox" />Realiza el registro del personal en sistema de seguridad y posterior salida</label>
+  <label class="card-checklist"><input type="checkbox" />Comunica al Operador de CCTV el ingreso de las autoridades</label>
+  </ul>
+
+   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE PERSONAL CESADO</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+     <div class="checklist-tabla">  
+  <label class="card-checklist"><input type="checkbox" />Verifica si hay correo por parte de GDH, solicitando el acceso del personal CESADO, de no haberlo, no ingresa.</label>
+    <label class="card-checklist"><input type="checkbox" />Solicita los siguientes documentos: DNI y consulta el motivo de su ingreso.</label>
+  </ul>
+
+  <div style="margin-top: 1.5em; padding: 1em; background-color:rgba(226, 203, 203, 0.65); border-left: 4px solid #0077cc;">
+    <strong>CONSIDERACIONES GENERALES:</strong> 
+    <ol style="text-align: justify; padding-left: 1.2em;">
+      <li>Está prohibido el ingreso de armas a las instalaciones de TPP.</li>
+      <li>El personal de vigilancia por ningún motivo debe permitir el ingreso de una persona que presente signos de haber ingerido licor y/o estupefacientes.</li>
+      <li>Se encuentra prohibido el ingreso a niños menores de 10 años de edad a la zona operativa.</li>
+      <li>El personal de vigilancia responsable de los accesos de ingreso y salida del terminal al detectar alguna anomalía debe proceder de acuerdo con el P-OPESEG-015 Procedimientos para identificar y responder ante eventos críticos.</li>
+  </div>
+`;
+funcionesPorPuesto["Puerta de ingreso - Puerta Naranja"] = `
+  <!-- Puesto: Puerta de ingreso - Puerta Naranja -->
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">AVP PUERTA DE ACCESO ZONA OPERATIVA</h2>
+  <p style="text-align: justify;">
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE CLIENTES</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <div class="checklist-tabla">
+  <label class="card-checklist"><input type="checkbox"/>Solicita pase correspondiente para su acceso.</label>
+  <label class="card-checklist"><input type="checkbox"/>En caso porte maletines u otros se le indica con cortesia que no esta permitido el ingreso a patio con maletines u otros, y que deben de dejarlos en la garita</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra los datos del cliente en el formato F-0PESEG-020 - Registro de Control de Ingreso y Salida de Visitas, si ingresa a Zona Operativa, debe de contar con su (OS,OT)</label>
+  </ul>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE TERCEROS</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <p>SEGUROS, IMPORTADORES, EXPORTADORES, ESTIBA, INSPECTORES, FUMIGADORES Y MAQUINARIA PESADA.<p>
+  <div class="checklist-tabla">
+    <label class="card-checklist"><input type="checkbox"/>Solicita a los usuarios los siguiente documentos: DNI, Licencia de Conducir, Pasaporte, SCTR y EPP.</label>
+    <label class="card-checklist"><input type="checkbox"/>Revisa via TEAMS el reporte de planificacion, de estar conforme se registrara el ingreso en el Sistema de Visitas y se entregara un pase.</label>
+  </ul>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO A ZONA OPERATIVA</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <div class="checklist-tabla">
+  <label class="card-checklist"><input type="checkbox"/>En caso el proveedor porte maletines u otros, se le indicara con cortesia que muestre el interior.</label>
+  <label class="card-checklist"><input type="checkbox"/>El proveedor que ingrese a zona operativa debe portar equipo EPP</label>
+  <label class="card-checklist"><input type="checkbox"/>Realiza la revision de maletas si las hubiera, y procede a registrar en el formato F-0PESEG-020.</label>
+  <label class="card-checklist"><input type="checkbox"/>Debe indicar al proveedor que solo puede dirigirse al almacen o a la zona que corresponda dejar los materiales.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra el ingreso y salida del proveedor en el formato F-0PESEG-022.</label>
+  <label class="card-checklist"><input type="checkbox"/>Realiza la inspeccion de la unidad, verificando la cabina, maletera y el contorno de la unidad.</label>
+  </ul>
+
+    <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO A ZONA OPERATIVA PERSONAL CESADO</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <div class="checklist-tabla">
+  <label class="card-checklist"><input type="checkbox"/>Verifica que las pertenencias del personal CESADO para su internamiento.</label>
+  <label class="card-checklist"><input type="checkbox"/>Verificar a la salida del personal CESADO, de encontrar alguna pertenencia no registrada debe de comunicar a CCTV/Supervisor de Seguridad.</label>
+  </ul>
+`;
+funcionesPorPuesto["Puerta de ingreso Vehiculos Menores"] = `
+  <!-- Puesto: Puerta de ingreso peatonal - Garita T1 -->
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES CON VEHICULO</h2>
+  </p>
+   <h3>AVP PUERTA DE ACCESO VEHICULAR: </h3>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox"/>En caso ingrese con vehiculo, debe de estacionarse en el parqueo administrativo.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra los datos del visitante en el formato F-OPESEG-022.</label>
+  <label class="card-checklist"><input type="checkbox"/>En caso el visitante porte maletines, mochilas u otros se le indica con cortesía que muestre el interior. Las pertenencias deben ser removidas por su propio dueño.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra los datos del visitante en el formato electrónico F-OPESEG-020 Registro de Control de Ingreso y Salida de Visitas.</label>
+  <label class="card-checklist"><input type="checkbox"/>Al retirarse, se solicita la papeleta de ingreso debidamente firmada, sellada por la persona visitada y registra la salida en el formato electronico F-OPESEG-020.</label>
+  </ul>
+  
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE A ZONA OPERATIVA - VEHICULAR</h2>
+  <style="text-align: justify; padding-left: 1.2em;">
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox"/>En caso ingrese con vehiculo, debe de estacionarse en el parqueo administrativo.</label>
+  <label class="card-checklist"><input type="checkbox"/>El personal de vigilancia realiza la revisión de la unidad (cabina, contorno y maletera).</label>
+  <label class="card-checklist"><input type="checkbox"/>En caso el visitante porte maletines, mochilas u otros se le indica con cortesía que muestre el interior. Las pertenencias deben ser removidas por su propio dueño.</label>
+  <label class="card-checklist"><input type="checkbox"/>En caso el visitante no cuente con EPP, se le proporcionará los implementos necesarios, los cuales deben ser devueltos al término de la diligencia.</label>
+  <label class="card-checklist"><input type="checkbox"/>Al concluir, las autoridades proceden a retirarse por el acceso peatonal y/o vehicular según sea el caso; el personal de seguridad realiza la revisión de maletas si las hubiera y registra la hora de salida.</label>
+  </ul>
+
+`;
+funcionesPorPuesto["Puerta de ingreso LCL"] = `
+  <!-- Puesto: Puerta de ingreso LCL -->
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON MERCADERÍA PARA COMO DEPOSITO SIMPLE</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <h3>INGRESO</h3>
+  <label class="card-checklist"><input type="checkbox"/>En caso ingrese con vehiculo, debe de estacionarse en el parqueo administrativo.</label>
+  <label class="card-checklist"><input type="checkbox"/>Solicita al transportista: Guia de Remision del Cliente y Guia de Remision del Transportista, o correo de Customer.</label>
+  <label class="card-checklist"><input type="checkbox"/>Verifica en ambas guias: Direccion de Almacen (TPP), placa del vehiculo, descripcion y cantidad de mercaderia.</label>
+  <label class="card-checklist"><input type="checkbox"/>En caso no se cuente con estos documentos, consulta a CCTV de turno para su ingreso.</label>
+  <label class="card-checklist"><input type="checkbox"/>Verifica que cuenta con: Extintor de seguridad, botiquin, EPP y realiza Inspeccion Vehicular en formato F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra datos del vehiculo, chofer y descripcion de la mercaderia indicando N° bultos en el formato F-OPESEG-043.</label>
+  <label class="card-checklist"><input type="checkbox"/>Realiza salida de Inspeccion del camion y aleatoriamente llenara el formato F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox"/>Revisa la unidad y registra la hora de salida en formato F-OPESEG-044</label>
+</ul>
+`;
+funcionesPorPuesto["AFORO"] = `
+  <!-- Puesto: Aforo -->
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">Manual de Funciones</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <h3>1. Objetivo del Puesto</h3>
+  <label class="card-checklist"><input type="checkbox"/>Realiza .</label>
+  <p style="text-align: justify;">
+    Describir las funciones y responsabilidades asignadas al vigilante que realiza las tareas en el puesto de <strong>Aforo</strong>.
+  </p>
+  <!-- Más detalles según el puesto -->
+`;
+
+
+funcionesPorPuesto["Puerta de salida de camiones - Balanza de Salida"] = `
+  <!-- Puesto: Puerta de salida de camiones - Balanza de Salida -->
+<h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN(DESPACHOS) </h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox"/>Solicita al conductor; ticket de pesaje, verificando que el N° de contenedor concuerde con el fisico, lo misma verificacion se hara con el EIR.</label>
+  <label class="card-checklist"><input type="checkbox"/>Realiza salida AR PORTAL, si la APP arrojara mensaje de error o datos no sean los mismos que en fisico, se informara a Operador de CCTV/Supervisor de Seguridad.</label>
+  <label class="card-checklist"><input type="checkbox"/>Realiza antes de la salida, la Inspeccion Vehicular de manera aleatoria llenara el formato F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox"/>En caso de contenedores tipo RH, verificara que este salga con su cable completo.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra el numero de precinto, contenedor y la hora de salida en formato F-OPESEG-025.</label>
+  </ul>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS PARA EXPORTACIÓN(Embarques)</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox"/>Verificara que el contenedor se encuentre en el listado entregado, debera solicitar la Guia de Remision de TPP (Fisica o Virtual).</label>
+  <label class="card-checklist"><input type="checkbox"/>Validara los datos en Guia, con los datos en Fisico.</label>
+  <label class="card-checklist"><input type="checkbox"/>Realiza verificacion de dispositivo de seguridad; cola de pato en "U" o invertida, correctamente asegurada.</label>
+  <label class="card-checklist"><input type="checkbox"/>Realiza antes de la salida, la Inspeccion Vehicular de manera aleatoria llenara el formato F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox"/>En caso de contenedores tipo RH, debera de verificar el cable, mampara de seguridad, la cual debe tener 15cm de distancia y 1.80 mts de altura.</label>
+  <label class="card-checklist"><input type="checkbox"/>Comunica al conductor de custodia la salida de los contenedores para la escolta correspondiente.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra el N° de contenedor, precinto, hora de salida, N° de Guia en el formato F-OPESEG-25.</label>
+  <label class="card-checklist"><input type="checkbox"/> </label>
+  </ul>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES CON CONTENEDORES LLENOS DE DESCARGA DE IMPORTACION</h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+  <label class="card-checklist"><input type="checkbox"/>Realiza antes de la salida, la Inspeccion Vehicular de manera aleatoria llenara el formato F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra el numero de precinto, contenedor y la hora de salida en formato F-OPESEG-025.</label>
+
+<h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES CON MERCADERÍA PARA SER LLENADO EN TPP </h2>
+  <ul style="text-align: justify; padding-left: 1.2em;">
+    <label class="card-checklist"><input type="checkbox"/>Realiza antes de la salida, la Inspeccion Vehicular de manera aleatoria llenara el formato F-OPESEG-026.</label>
+  <label class="card-checklist"><input type="checkbox"/>Registra el numero de precinto, contenedor y la hora de salida en formato F-OPESEG-025.</label>s
 `;
 
 // Modal de checklist completado
@@ -97,177 +319,7 @@ document.addEventListener("change", (e) => {
 
 
 
-funcionesPorPuesto["Puerta de ingreso Peatonal - Garita"] = `
-  <!-- Puesto: Puerta de ingreso Peatonal - Garita -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES</h2>
-  <div class="checklist-tabla">
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <label class="card-checklist"><input type="checkbox" /> Solicita: DNI, Licencia de Conducir o Pasaporte, motivo de la visita, nombre de la persona a visitar y nombre de la empresa a la que pertenece.</label>
-  <label class="card-checklist"><input type="checkbox" /> Si recibe visita no anunciada, comunica con Supervisor de seguridad y/o asistente de seguridad para autorización.</label>
-  <label class="card-checklist"><input type="checkbox" /> Verifica identidad del visitante con Reconocimiento facial de la Reniec, ingresando N° de DNI y captura del rostro.</label>
-  <label class="card-checklist"><input type="checkbox" /> Realiza registro en sistema de seguridad de ingreso y salida.</label>
-  <label class="card-checklist"><input type="checkbox" /> Entrega pase correspondiente al visitante y papeleta de ingreso (F-OPESEG-023).</label>
-  <label class="card-checklist"><input type="checkbox" /> Indica vías de acceso y que debe portar el pase en lugar visible.</label>
-  </ul>
-  </div>
 
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE CLIENTES</h2>
-  <div class="checklist-tabla">
-  <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>AVP consulta el motivo del ingreso, verificando la información compartida vía teams el Reporte de planificación o través de un correo electrónico (solicita autorización a asistente de seguridad, supervisor de seguridad o CCTV), nombre de la empresa a la que pertenece, solicitando los siguientes documentos: Documento Nacional de Identidad - DNI, fotochecks de la entidad a la que pertenece, Carnet de Aduana (vigente), Licencia de Conducir y/o documentos que sustente el trámite en ventanilla. </li>
-    <li>AVP a través del aplicativo de Reconocimiento facial de la Reniec debe verificar la identidad del Cliente, ingresando el N° de su DNI y haciendo una captura del rostro del conductor, esperando la validación del rostro y los datos, de ser correcto otorgará el acceso, realiza el registro en sistema de seguridad ingreso y posterior salida, caso contrario, denegará el acceso y reportara al centro de control, quienes verificaran los datos correspondientes. </li>
-  </ul>
-
-   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE PROVEEDORES</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>Cuando el personal de la empresa proveedora se presente por la puerta peatonal, el personal de vigilancia verifica el correo y solicita los siguientes documentos: Documentos Nacional de Identidad – DNI (En el caso de extranjeros solicitan pasaporte o carné de extranjería), consultando el motivo y el nombre de la empresa a la que pertenece.  </li>
-  <li>AVP a través del aplicativo de Reconocimiento facial de la RENIEC debe verificar la identidad del chofer, ingresando el N° de su DNI y haciendo una captura del rostro del conductor esperando la validación del rostro y los datos, de ser correcto otorgará el acceso caso contrario, denegará el acceso y reportara al centro de control, quienes verificaran los datos correspondientes. </li>
-  <li>AVP realiza el registro en sistema de seguridad.</li>
-  <li>Si va a realizar la entrega de algún material o producto AVP solicita las guías de remisión.</li>
-  </ul>
-
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE AUTORIDADES</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>Ingreso de autoridades tales como SENASA, SUNAT, FISCALIA, DIRANDRO, MTC, MINTRA, BOE entre otros; AVP solicita Documento Nacional de Identidad - DNI y fotocheck de la entidad a la que pertenece y consulta el motivo del ingreso.</li>
-  <li>AVP realiza el registro del personal en sistema de seguridad y posterior salida.</li>
-  <li>AVP comunica al Operador de CCTV el ingreso de las autoridades</li>
-  </ul>
-
-   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE PERSONAL CESADO</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP verifica si hay correo de comunicación del área de Gestión de Desarrollo Humano de un personal cesado de TPP solicitando su acceso, de no haber correo, no permitirá el acceso, comunicará a CCTV. </li>
-  <li>AVP solicita a personal cesado lo siguiente: DNI (Documento Nacional de Identidad) y preguntar el motivo por el cual solicitar el ingreso, comunica a CCTV el ingreso. </li>
-  </ul>
-
-  <div style="margin-top: 1.5em; padding: 1em; background-color:rgba(226, 203, 203, 0.65); border-left: 4px solid #0077cc;">
-    <strong>CONSIDERACIONES GENERALES:</strong> 
-    <ol style="text-align: justify; padding-left: 1.2em;">
-      <li>Está prohibido el ingreso de armas a las instalaciones de TPP.</li>
-      <li>El personal de vigilancia por ningún motivo debe permitir el ingreso de una persona que presente signos de haber ingerido licor y/o estupefacientes.</li>
-      <li>Se encuentra prohibido el ingreso a niños menores de 10 años de edad a la zona operativa.</li>
-      <li>El personal de vigilancia responsable de los accesos de ingreso y salida del terminal al detectar alguna anomalía debe proceder de acuerdo con el P-OPESEG-015 Procedimientos para identificar y responder ante eventos críticos.</li>
-  </div>
-`;
-
-funcionesPorPuesto["Puerta de ingreso - Puerta Naranja"] = `
-  <!-- Puesto: Puerta de ingreso - Puerta Naranja -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">AVP PUERTA DE ACCESO ZONA OPERATIVA</h2>
-  <p style="text-align: justify;">
-
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE CLIENTES</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>AVP solicita pase correspondiente para su acceso. </li>
-    <li>En caso el cliente porte maletines, mochilas u otros se le indica con cortesía que no está permitido el ingreso con maletas u mochilas a patio y estos deben de dejarse en garita. </li>
-    <li>AVP del acceso peatonal registra los datos del cliente en el formato F-OPESEG-020 Registro de Control de Ingreso y Salida de Visitas. (Si el Cliente requiere el ingreso a zona operativa debe contar con una orden de servicio, un volante de despacho, booking y/o resolución de aduanas la cual puede tramitar al momento de su atención en ventanilla o previamente a través del correo electrónico en coordinación con el operador de facturación o con importaciones).   </p></li>
-  </ul>
-
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE TERCEROS</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <p>SEGUROS, IMPORTADORES, EXPORTADORES, ESTIBA, INSPECTORES, FUMIGADORES Y MAQUINARIA PESADA.<p>
-    <li>AVP responsable del acceso peatonal solicita a los usuarios los siguientes documentos: Documento Nacional de Identidad – DNI, Licencia de Conducir y Pasaporte, SCTR y EPP.  /li>
-    <li>ARevisa vía teams el Reporte de planificación, donde indique el nombre y apellido, número de DNI, cargo de la persona, razón social de los usuarios y labor a realizar. De estar conforme registrara el ingreso y entregara el pase de visita correspondiente a cada persona. (de requerir ingreso de suministros, equipos, cámaras fotográficas y/o herramientas para el desarrollo de sus labores, debe indicar enviar información a casilla accesostpp@tpp.com.pe un día antes de su ingreso y/ o coordinar Customer Service de servicio al cliente quien realizara el registro de información y actualizara vía teams el Reporte de planificación). </li>
-    <li>AVP realiza el registro en sistema de seguridad ingreso y posterior salida.</li>
-  </ul>
-
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO A ZONA OPERATIVA</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>En caso el proveedor porte maletines, mochilas u otros se le indica con cortesía que muestre el interior. Las pertenencias serán removidas por su propio dueño. </li>
-  <li>El proveedor que ingrese a la zona operativa debe portar indumentaria y/o equipo de protección personal (botas de seguridad, casco, chaleco reflectivo). </li>
-  <li>Al concluir los trabajos el proveedor procede a retirarse; AVP realiza la revisión de maletas si las hubiera y anota su hora de salida en el formato electrónico F-OPESEG-020 Registro de Control de Ingreso y Salida de Visitas. </li>
-  <li>AVP debe indicar al proveedor que solo puede dirigirse al almacén o a la zona que corresponda dejar los materiales.</li>
-  <li>El personal de seguridad registra el ingreso y salida del proveedor en el formato F-OPESEG-022 Registro de Control de Ingreso y Salida de Vehículos. </li>
-  <li>El personal de vigilancia realiza la inspección de la unidad, verificando la parte de la cabina, la maletera (si lo tuviera) y el contorno de la unidad.</li>
-  </ul>
-
-    <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO A ZONA OPERATIVA PERSONAL CESADO</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>AVP verifica que las pertenencias del personal cesado para su internamiento.</li>
-    <li>AVP a la Saida de personal, detectar alguna pertenencia no registrada debe comunicar inmediatamente a CCTV/Supervisor de Seguridad no permitiendo la salida del personal. </li>
-  </ul>
-
-`;
-
-funcionesPorPuesto["Puerta de ingreso Vehiculos Menores"] = `
-  <!-- Puesto: Puerta de ingreso peatonal - Garita T1 -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES CON VEHICULO</h2>
-  <p style="text-align: justify;">
-  </p>
-   <h3>AVP PUERTA DE ACCESO VEHICULAR: </h3>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-    <li>En caso la visita ingrese con vehículo, la unidad se estaciona en el parqueo administrativo. AVP registra los datos del visitante en el formato F-OPESEG-022 Registro de control de Ingreso y Salida de vehículos, realiza la revisión de la unidad (cabina, contorno y maletera).</li>
-    <li>En caso el visitante porte maletines, mochilas u otros se le indica con cortesía que muestre el interior. Las pertenencias deben ser removidas por su propio dueño.</li>
-    <li>AVP registra los datos del visitante en el formato electrónico F-OPESEG -020 Registro de Control de Ingreso y Salida de Visitas. </li>
-    <li>La visita procede a retirarse por el acceso peatonal y/o vehicular según sea el caso; AVP realiza la revisión correspondiente, solicita la papeleta de ingreso debidamente firmada y sellada por la persona visitada y registra la hora de salida en el formato electrónico F-OPESEG-020 Registro de Control de Ingreso y Salida de Visitas. </li>
-  </ul>
-
-    <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE A ZONA OPERATIVA - VEHICULAR</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>Autoridades ingresan con vehículo, se estacionan en el parqueo administrativo señalizado para visitas. AVP realiza la revisión respectiva de la unidad (cabina, contorno y maletera). </li>
-  <li>En caso las autoridades porten maletines, mochilas u otros se les indica con cortesía que muestre el interior. Las pertenencias son removidas por su propio dueño.</li>
-  <li>AVP verifica que porten con indumentaria y/o equipo de protección personal (casco y chaleco reflectivo), de no contar con EPP el área de seguridad proporciona los implementos necesarios, los cuales deben ser devueltos al término de la diligencia.</li>
-  <li>Al concluir, las autoridades proceden a retirarse por el acceso peatonal y/o vehicular según sea el caso; el personal de seguridad realiza la revisión de maletas si las hubiera y registra la hora de salida.</li>
-  </ul>
-`;
-
-funcionesPorPuesto["Puerta de ingreso LCL"] = `
-  <!-- Puesto: Puerta de ingreso LCL -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON MERCADERÍA PARA COMO DEPOSITO SIMPLE</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <h3>INGRESO</h3>
-  <li>AVP solicita al transportista los siguientes documentos:  Guía de Remisión del Cliente y Guía de Remisión del Transportista y/o correo de customer. </li>
-  <li>AVP verifica en la guía de remisión del cliente y del transportista los siguientes datos: Dirección del almacén (TPP), placa del vehículo, la descripción y cantidad de la mercadería o número de contenedor. </li>
-  <li>AVP En el caso el transportista no cuente con estos documentos el personal de vigilancia, solicita confirmación del Operador de CCTV, para proceder con el ingreso. </li>
-  <li>AVP revisa antes del ingreso: Extintor de seguridad, botiquín de primeros auxilios, equipos de protección del chofer (chaleco reflectivo, zapatos de seguridad y casco) y realiza la Inspección del camión y aleatoriamente llenará el F-OPESEG-026. </li>
-  <li>AVP registra los datos del vehículo, chofer y la descripción de la mercadería indicando el N.º de bultos en el formato F-OPESEG-043 Tránsito de Mercadería Carga Suelta. </li>
-  <h3>SALIDA</h3>
-  <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato F-OPESEG-026. </li>
-  <li>AVP revisa la unidad y registra la hora de salida del en el formato F-OPESEG-044 Tránsito de Mercadería Carga Suelta. </li>
-</ul>
-`;
-
-funcionesPorPuesto["Puerta de salida de camiones - Balanza de Salida"] = `
-  <!-- Puesto: Puerta de salida de camiones - Balanza de Salida -->
-<h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACIÓN(DESPACHOS) </h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP solicita al transportista el ticket de pesaje de balanza verificando que el N.º de contenedor concuerde con el físico, asimismo el EIR manual donde verifica el número de precinto y el número de contenedor, llenado por el almacenero de Llenos.</li>
-  <li>AVP realiza el registro de salida AR PORTAL, si la aplicación arrojara que datos son incorrectos u otro mensaje de error no permitirá la salida de la unidad informando de inmediato a Supervisor de Seguridad y/o a Operador de CCTV. </li>
-  <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato F-OPESEG-026. </li>
-  <li>AVP Adicionalmente en el caso de Reefers verifican el cable conectado al contenedor. </li>
-  <li>AVP registra el número de precinto, el número de contenedor y la hora de salida del transportista en el formato F-OPSEG-025 Tránsito de contenedores.</li>
-  </ul>
-
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS PARA EXPORTACIÓN(Embarques)</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP a la salida del camión verificará que el contenedor se encuentre en el listado entregado   resaltándolo, deberá solicitar la Guía de remisión de TPP la cual debe ser física o virtual, de lo contario no dará salida a unidad, debe verificar los datos del contenedor y precinto, contrastándolos con el físico. </li>
-  <li>AVP El personal de vigilancia realizará la verificación de dispositivo de seguridad cola de pato en “U” o invertida que se encuentre correctamente asegurada y con pernos completos, de no ser así no permitirá la salida de la unidad comunicando a Supervisor de Seguridad y/o operador de CCTV. </li>
-  <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato F-OPESEG-026. </li>
-  <li>AVP Adicionalmente en el caso de Reefers verifican el cable conectado al contenedor y Mampara de unidad, la cual debe ser pegada a contenedor a unos 15 cm y la mampara debe tener altura de 1.80mt.  </li>
-  <li>AVP no debe permitir la salida de ninguna carga sin la Orden de salida correspondiente visada por el área de documentación. </li>
-  <li>AVP comunican al chofer de custodia la salida de los contenedores para la escolta correspondiente. </li>
-  <li>AVP registra, el N° de contenedor, precinto, la hora de la salida del transportista y N° de guía en el formato F-OPESEG-25 Tránsito de contenedores. </li>
-  </ul>
-
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES CON CONTENEDORES LLENOS DE DESCARGA DE IMPORTACION</h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP realiza antes de la salida la Inspección del camión y aleatoriamente llenará el formato F-OPESEG-026. </li>
-  <li>AVP registra la salida del transportista en el formato F-OPESEG-025 Tránsito de Contenedores. </li>
-</ul>
-
-<h2 style="margin-bottom: 0.5em; color: #005fa3;">SALIDA DE CAMIONES CON MERCADERÍA PARA SER LLENADO EN TPP </h2>
-  <ul style="text-align: justify; padding-left: 1.2em;">
-  <li>AVP antes de la salida la Inspección del camión y aleatoriamente llenará el formato F-OPESEG-026.</li>
-  <li>AVP revisa y registra la hora de salida en el formato F-OPESEG-025 Tránsito de Contenedores. </li>
-`;
-funcionesPorPuesto["AFORO"] = `
-  <!-- Puesto: Aforo -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">Manual de Funciones</h2>
-
-  <h3>1. Objetivo del Puesto</h3>
-  <p style="text-align: justify;">
-    Describir las funciones y responsabilidades asignadas al vigilante que realiza las tareas en el puesto de <strong>Aforo</strong>.
-  </p>
-  <!-- Más detalles según el puesto -->
-`;
 
 funcionesPorPuesto["LLENADO"] = `
   <!-- Puesto: Llenado -->
