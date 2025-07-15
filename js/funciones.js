@@ -342,14 +342,6 @@ funcionesPorPuesto["LCL"] = `
   </p>
   <!-- Más detalles según el puesto -->
 `;
-
-
-// TPP2
-funcionesPorPuesto["Puerta de ingreso de camiones - T3"] = `
-  <!-- Puesto: Puerta de ingreso de camiones - T3 -->
-  <h2 style="margin-bottom: 0.5em; color: #005fa3;">Manual de Funciones</h2>
-  <!-- Similar estructura que los anteriores -->
-`;
 funcionesPorPuesto["Puerta de ingreso peatonal - Garita T1"] = `
   <!-- Puesto: Puerta de ingreso peatonal - Garita T1 -->
   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES</h2>
