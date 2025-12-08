@@ -1,4 +1,4 @@
-const CACHE_NAME = "manual-vigilancia-30";
+const CACHE_NAME = "manual-vigilancia-32";
 const OFFLINE_URL = "html/index.html";
 const ASSETS = [
   "html/index.html",
@@ -7,6 +7,7 @@ const ASSETS = [
   "html/puesto.html",
   "manifest.webmanifest",
   "css/index.css",
+  "css/tailwind.css",
   "css/identificacion.css",
   "css/puestos.css",
   "css/puesto.css",
