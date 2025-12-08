@@ -10,11 +10,12 @@ descripcion.classList.add("descripcion-puesto");
 
 // Recupera el puesto desde localStorage
 const puesto = localStorage.getItem("puestoSeleccionado");
+const matchedKey = findPuestoKey(puesto, catalogoPuestos);
 
 // Renderiza contenido y arma acordeones
-if (puesto && catalogoPuestos[puesto]) {
-  titulo.innerText = puesto;
-  descripcion.innerHTML = catalogoPuestos[puesto];
+if (matchedKey) {
+  titulo.innerText = matchedKey;
+  descripcion.innerHTML = catalogoPuestos[matchedKey];
   buildAccordions();
 } else {
   titulo.innerText = "Puesto no identificado";
@@ -77,6 +78,28 @@ function toggleAccordion(body, header) {
   const isOpen = header.getAttribute("aria-expanded") === "true";
   header.setAttribute("aria-expanded", String(!isOpen));
   body.classList.toggle("open", !isOpen);
+}
+
+// Busca el puesto en el catálogo, normalizando mayúsculas/acentos
+function findPuestoKey(nombre, catalogo) {
+  if (!nombre) return null;
+  const normalize = (txt) =>
+    txt
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+
+  const target = normalize(nombre);
+  const keys = Object.keys(catalogo);
+
+  // Coincidencia exacta normalizada
+  const exact = keys.find((k) => normalize(k) === target);
+  if (exact) return exact;
+
+  // Coincidencia por contiene (por si hay variantes)
+  const partial = keys.find((k) => normalize(k).includes(target) || target.includes(normalize(k)));
+  return partial || null;
 }
 
 // Normaliza las tablas de checklist para mejor lectura

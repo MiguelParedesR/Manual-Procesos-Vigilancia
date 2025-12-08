@@ -353,6 +353,51 @@ funcionesPorPuesto["LCL"] = `
   </div>
 `;
 
+funcionesPorPuesto["Puerta de ingreso de camiones - T3"] = `
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE IMPORTACION (DESPACHOS)</h2>
+  <div class="checklist-tabla">
+    <ul style="text-align: justify; padding-left: 1.2em;">
+      <label class="card-checklist"><input type="checkbox" /> Verifica unidad en programacion o listado autorizado.</label>
+      <label class="card-checklist"><input type="checkbox" /> Solicita tarjeta de propiedad, licencia AIII y documentos AR/QR, guia y SCTR.</label>
+      <label class="card-checklist"><input type="checkbox" /> Valida identidad en RENIEC y captura selfie.</label>
+      <label class="card-checklist"><input type="checkbox" /> Revisa extintor, botiquin, EPP e inspecciona cabina y contenedor; llena F-OPESEG-026 al azar.</label>
+      <label class="card-checklist"><input type="checkbox" /> Registra placa, contenedor y precinto en F-OPESEG-025 y avisa a CCTV.</label>
+    </ul>
+  </div>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES PARA EL RETIRO DE CONTENEDORES LLENOS DE EXPORTACION (EMBARQUE)</h2>
+  <div class="checklist-tabla">
+    <ul style="text-align: justify; padding-left: 1.2em;">
+      <label class="card-checklist"><input type="checkbox" /> Confirma unidad nombrada y en horario autorizado.</label>
+      <label class="card-checklist"><input type="checkbox" /> Solicita booking o guia, tarjeta de propiedad y licencia AIII.</label>
+      <label class="card-checklist"><input type="checkbox" /> Verifica EPP, extintor y precintos; llena F-OPESEG-026 si corresponde.</label>
+      <label class="card-checklist"><input type="checkbox" /> Registra datos en F-OPESEG-025 y coordina con CCTV si requiere inspeccion.</label>
+    </ul>
+  </div>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON CONTENEDORES LLENOS DE DESCARGA DE IMPORTACION</h2>
+  <div class="checklist-tabla">
+    <ul style="text-align: justify; padding-left: 1.2em;">
+      <label class="card-checklist"><input type="checkbox" /> Solicita ticket de pesaje y valida contenedor y precinto.</label>
+      <label class="card-checklist"><input type="checkbox" /> Cruza con listado SINI y resalta seleccionados.</label>
+      <label class="card-checklist"><input type="checkbox" /> Verifica cable de energia en reefers.</label>
+      <label class="card-checklist"><input type="checkbox" /> Inspecciona la unidad y llena F-OPESEG-026 al azar.</label>
+      <label class="card-checklist"><input type="checkbox" /> Registra datos y comunica el ingreso a CCTV.</label>
+    </ul>
+  </div>
+
+  <h2 style="margin-bottom: 0.5em; color: #005fa3;">INGRESO DE CAMIONES CON MERCADERIA PARA SER LLENADO EN TPP</h2>
+  <div class="checklist-tabla">
+    <ul style="text-align: justify; padding-left: 1.2em;">
+      <label class="card-checklist"><input type="checkbox" /> Solicita booking u orden/autorizacion de llenado.</label>
+      <label class="card-checklist"><input type="checkbox" /> Verifica direccion TPP, placa y descripcion en guias.</label>
+      <label class="card-checklist"><input type="checkbox" /> Controla EPP y condiciones de la unidad.</label>
+      <label class="card-checklist"><input type="checkbox" /> Registra en F-OPESEG-025 y toma evidencias si aplica.</label>
+      <label class="card-checklist"><input type="checkbox" /> Reporta observaciones a CCTV antes de autorizar ingreso.</label>
+    </ul>
+  </div>
+`;
+
 funcionesPorPuesto["Puerta de ingreso peatonal - Garita T1"] = `
   <h2 style="margin-bottom: 0.5em; color: #005fa3;">ACCESO DE VISITANTES</h2>
   <div class="checklist-tabla">
