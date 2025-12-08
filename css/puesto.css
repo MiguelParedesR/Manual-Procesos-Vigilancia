@@ -1,3 +1,15 @@
+.page-shell {
+  width: 100%;
+  max-width: 1280px;
+}
+
+.puesto-panel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(18px, 3vw, 44px);
+}
+
 /* Typography helpers for puesto.html */
 .titulo-puesto {
   letter-spacing: -0.015em;
@@ -5,9 +17,10 @@
 
 .descripcion-puesto {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
   line-height: 1.7;
   color: #0f172a;
+  width: 100%;
 }
 
 .descripcion-puesto h2,
@@ -22,6 +35,8 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 100%;
 }
 
 .accordion + .accordion {
@@ -34,8 +49,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 16px;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 16px 18px;
+  background: #f7f9fb;
   border: none;
   font-weight: 700;
   color: #0b132b;
@@ -55,8 +70,9 @@
 
 .accordion__body {
   display: none;
-  padding: 16px 20px 20px 20px;
+  padding: clamp(18px, 2vw, 26px);
   background: #ffffff;
+  width: 100%;
 }
 
 .accordion__body.open {
@@ -69,7 +85,8 @@
 
 .checklist-stack {
   display: grid;
-  gap: 10px;
+  gap: 14px;
+  width: 100%;
 }
 
 .descripcion-puesto ul,

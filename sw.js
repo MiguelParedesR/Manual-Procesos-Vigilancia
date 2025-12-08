@@ -1,4 +1,4 @@
-const CACHE_NAME = "manual-vigilancia-v24";
+const CACHE_NAME = "manual-vigilancia-30";
 const OFFLINE_URL = "html/index.html";
 const ASSETS = [
   "html/index.html",

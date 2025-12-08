@@ -1,6 +1,8 @@
 // Recupera los elementos HTML
 const titulo = document.getElementById("tituloPuesto");
 const descripcion = document.getElementById("descripcionPuesto");
+// Catálogo de funciones con fallback defensivo
+const catalogoPuestos = window.funcionesPorPuesto || {};
 
 // Aplica clases base
 titulo.classList.add("titulo-puesto");
@@ -10,21 +12,21 @@ descripcion.classList.add("descripcion-puesto");
 const puesto = localStorage.getItem("puestoSeleccionado");
 
 // Renderiza contenido y arma acordeones
-if (puesto && funcionesPorPuesto[puesto]) {
+if (puesto && catalogoPuestos[puesto]) {
   titulo.innerText = puesto;
-  descripcion.innerHTML = funcionesPorPuesto[puesto];
+  descripcion.innerHTML = catalogoPuestos[puesto];
   buildAccordions();
 } else {
   titulo.innerText = "Puesto no identificado";
   descripcion.innerText = "No se encontraron funciones para este puesto.";
 }
 
-// Botón de retorno
+// Boton de retorno
 function volverAPuestos() {
   window.location.href = "puestos.html";
 }
 
-// Arma acordeones por cada título H2 del contenido
+// Arma acordeones por cada titulo H2 del contenido
 function buildAccordions() {
   const headings = Array.from(descripcion.querySelectorAll("h2"));
   if (!headings.length) return;
@@ -52,7 +54,7 @@ function buildAccordions() {
     header.setAttribute("aria-expanded", idx === 0 ? "true" : "false");
     header.innerHTML = `
       <span class="accordion__title">${section.title}</span>
-      <span class="accordion__icon" aria-hidden="true">⌄</span>
+      <span class="accordion__icon" aria-hidden="true">&#8964;</span>
     `;
 
     const body = document.createElement("div");
@@ -68,11 +70,6 @@ function buildAccordions() {
     card.appendChild(header);
     card.appendChild(body);
     descripcion.appendChild(card);
-
-    if (idx === 0) {
-      body.style.maxHeight = `${body.scrollHeight}px`;
-      header.setAttribute("aria-expanded", "true");
-    }
   });
 }
 
@@ -96,9 +93,37 @@ function enhanceChecklist(root) {
 
     tabla.replaceWith(stack);
   });
+
+  // Convierte listas simples en checklists si no tienen estilo
+  const listas = Array.from(root.querySelectorAll("ul, ol")).filter(
+    (ul) => !ul.closest(".checklist-stack")
+  );
+  listas.forEach((ul) => {
+    const lis = Array.from(ul.querySelectorAll("li"));
+    if (!lis.length) return;
+
+    const stack = document.createElement("div");
+    stack.className = "checklist-stack";
+
+    lis.forEach((li) => {
+      const label = document.createElement("label");
+      label.className = "card-checklist";
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = false;
+      label.appendChild(checkbox);
+
+      const span = document.createElement("span");
+      span.innerHTML = li.innerHTML;
+      label.appendChild(span);
+      stack.appendChild(label);
+    });
+
+    ul.replaceWith(stack);
+  });
 }
 
-// Delegación de eventos para los checkboxes del checklist
+// Delegacion de eventos para los checkboxes del checklist
 document.addEventListener("change", (e) => {
   if (e.target.matches('.card-checklist input[type="checkbox"]')) {
     revisarChecklistFinal();

@@ -58,7 +58,7 @@
 </head>
 
 <body class="font-display bg-gradient-to-br from-slate-100 via-slate-50 to-white text-slate-900">
-  <div class="button-container pointer-events-none fixed inset-x-6 top-6 flex items-start justify-between">
+  <div class="button-container pointer-events-none fixed inset-x-8 top-6 flex items-start justify-between">
     <button
       class="btn-retorno pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 text-sm font-semibold text-brand-ink ring-1 ring-slate-200 backdrop-blur transition hover:-translate-y-[1px] hover:bg-white"
       onclick="volverAlInicio()">&larr; Menu</button>
@@ -67,10 +67,10 @@
       onclick="volverAPuestos()">Volver a los puestos</button>
   </div>
 
-  <main class="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-6 px-6 py-20">
-    <section class="rounded-3xl bg-white/95 p-10 text-slate-900 shadow-[0_22px_60px_rgba(0,0,0,0.12)] backdrop-blur">
-      <h1 id="tituloPuesto" class="titulo-puesto mb-4 text-4xl font-bold tracking-tight text-brand-ink"></h1>
-      <div id="descripcionPuesto" class="descripcion-puesto text-[15px] leading-7"></div>
+  <main class="page-shell mx-auto flex min-h-screen w-full max-w-screen-xl flex-col gap-10 px-4 py-12 sm:px-10 lg:px-16">
+    <section class="puesto-panel rounded-3xl bg-white/95 text-slate-900 shadow-[0_22px_60px_rgba(0,0,0,0.10)] backdrop-blur w-full">
+      <h1 id="tituloPuesto" class="titulo-puesto mb-6 text-4xl font-bold tracking-tight text-brand-ink"></h1>
+      <div id="descripcionPuesto" class="descripcion-puesto w-full text-[15px] leading-7 lg:text-base"></div>
     </section>
   </main>
 
