@@ -21,7 +21,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
 }
 
 .accordion + .accordion {
@@ -54,13 +54,22 @@
 }
 
 .accordion__body {
-  overflow: hidden;
-  padding: 0 16px 16px 16px;
-  transition: max-height 0.25s ease;
+  display: none;
+  padding: 16px 20px 20px 20px;
+  background: #ffffff;
+}
+
+.accordion__body.open {
+  display: block;
 }
 
 [aria-expanded="true"] .accordion__icon {
   transform: rotate(180deg);
+}
+
+.checklist-stack {
+  display: grid;
+  gap: 10px;
 }
 
 .descripcion-puesto ul,

@@ -57,8 +57,11 @@ function buildAccordions() {
 
     const body = document.createElement("div");
     body.className = "accordion__body";
-    if (idx !== 0) body.style.maxHeight = "0px";
+    if (idx === 0) {
+      body.classList.add("open");
+    }
     section.nodes.forEach((node) => body.appendChild(node));
+    enhanceChecklist(body);
 
     header.addEventListener("click", () => toggleAccordion(body, header));
 
@@ -76,7 +79,23 @@ function buildAccordions() {
 function toggleAccordion(body, header) {
   const isOpen = header.getAttribute("aria-expanded") === "true";
   header.setAttribute("aria-expanded", String(!isOpen));
-  body.style.maxHeight = isOpen ? "0px" : `${body.scrollHeight}px`;
+  body.classList.toggle("open", !isOpen);
+}
+
+// Normaliza las tablas de checklist para mejor lectura
+function enhanceChecklist(root) {
+  // Desarma contenedores pesados y deja solo la lista de items
+  const tablas = Array.from(root.querySelectorAll(".checklist-tabla"));
+  tablas.forEach((tabla) => {
+    const items = Array.from(tabla.querySelectorAll("label.card-checklist"));
+    if (!items.length) return;
+
+    const stack = document.createElement("div");
+    stack.className = "checklist-stack";
+    items.forEach((item) => stack.appendChild(item));
+
+    tabla.replaceWith(stack);
+  });
 }
 
 // Delegación de eventos para los checkboxes del checklist
