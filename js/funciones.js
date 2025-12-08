@@ -313,6 +313,13 @@ function revisarChecklistFinal() {
 // ✅ Usar 'change' en lugar de 'click' para detectar correctamente cuando se marca un checkbox
 document.addEventListener("change", (e) => {
   if (e.target.matches('.card-checklist input[type="checkbox"]')) {
+    const label = e.target.closest(".card-checklist");
+    if (label) {
+      label.classList.toggle("checked", e.target.checked);
+      if (e.target.checked) {
+        label.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
     revisarChecklistFinal();
   }
 });
@@ -661,4 +668,5 @@ funcionesPorPuesto["Puerta de salida"] = `
   </ul>
   
 `;
+
 

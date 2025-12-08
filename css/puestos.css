@@ -1,0 +1,61 @@
+/* Animations */
+.fade-in {
+  animation: fade-in 0.7s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keep numbering for puestos generados via JS */
+.enumerated {
+  counter-reset: puesto;
+}
+
+.enumerated .puesto-card::before {
+  counter-increment: puesto;
+  content: counter(puesto, decimal-leading-zero);
+  position: absolute;
+  top: 0.75rem;
+  left: 0.95rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #0f6fcc;
+  opacity: 0.8;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Allow Tailwind layout classes to drive placement */
+.vertical-buttons {
+  display: grid;
+}
+
+.puesto-card {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+  padding-left: 3.8rem;
+  color: #0b132b;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  background: rgba(255, 255, 255, 0.96);
+  overflow: hidden;
+}
+
+.puesto-card:hover {
+  transform: translateY(-4px);
+}
+
+.puesto-card * {
+  position: relative;
+  z-index: 1;
+}

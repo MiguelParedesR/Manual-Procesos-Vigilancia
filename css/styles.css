@@ -89,12 +89,15 @@
     align-items: flex-end;
     bottom: 20px;
     top: 20px;
-    pointer-events: none; /* 🛑 IMPORTANTE para permitir clics en elementos debajo */
+    pointer-events: none;
+    /* 🛑 IMPORTANTE para permitir clics en elementos debajo */
 
 }
+
 .btn-retorno,
 .btn-volver {
-  pointer-events: auto; /* ✅ Para que estos botones sí reciban clic */
+    pointer-events: auto;
+    /* ✅ Para que estos botones sí reciban clic */
 }
 
 
@@ -775,97 +778,99 @@ h3 {
         opacity: 1;
     }
 }
+
 .logo-header {
     padding: 1.5rem 0 1rem;
     background-color: #fff;
-  }
-  
-  .logo-img {
+}
+
+.logo-img {
     max-width: 180px;
     height: auto;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-  }  
+}
 
 
-  /* Estilo para la tablilla de checklist */
+/* Estilo para la tablilla de checklist */
 .checklist-tabla {
-  background: #f9fafd;
-  border: 2px solid #d0d9e6;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 1.5em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #f9fafd;
+    border: 2px solid #d0d9e6;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo de cada item tipo tarjeta con checkbox */
 .card-checklist {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #ffffff;
-  border: 1px solid #ccd6e0;
-  border-radius: 10px;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ccd6e0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .card-checklist:hover {
-  background-color: #f1f7fc;
+    background-color: #f1f7fc;
 }
 
 .card-checklist input[type="checkbox"] {
-  transform: scale(1.3);
-  accent-color: #005fa3;
-  cursor: pointer;
+    transform: scale(1.3);
+    accent-color: #005fa3;
+    cursor: pointer;
 }
 
 /* Modal de confirmación con carita feliz */
 .modal-checklist-final {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 .modal-checklist-final .modal-content {
-  background: white;
-  border-radius: 16px;
-  padding: 30px 40px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  animation: zoomIn 0.3s ease-out;
+    background: white;
+    border-radius: 16px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: zoomIn 0.3s ease-out;
 }
 
 .modal-checklist-final .emoji {
-  font-size: 60px;
-  margin-bottom: 10px;
+    font-size: 60px;
+    margin-bottom: 10px;
 }
 
 .modal-checklist-final .mensaje {
-  font-size: 20px;
-  font-weight: bold;
-  color: #005fa3;
+    font-size: 20px;
+    font-weight: bold;
+    color: #005fa3;
 }
 
 /* Animación suave */
 @keyframes zoomIn {
-  0% {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

@@ -47,6 +47,16 @@ if (formIdent) {
     } catch (err) {
       mensaje.textContent = "Error inesperado: " + err.message;
     }
-  });
+});
 }
 // Verifica si el canvas existe antes de agregar el listener
+
+// Registro de Service Worker para PWA
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    const swUrl = new URL("../sw.js", window.location.href);
+    navigator.serviceWorker.register(swUrl.href).catch((err) => {
+      console.error("Service Worker registration failed:", err);
+    });
+  });
+}
