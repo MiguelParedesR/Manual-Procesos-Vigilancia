@@ -42,11 +42,11 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Manrope"', 'system-ui', 'sans-serif'],
+            display: ['-apple-system', 'BlinkMacSystemFont', '"San Francisco"', '"Segoe UI"', 'system-ui', 'sans-serif'],
           },
           colors: {
-            'brand-orange': '#ff6600',
-            'brand-blue': '#0f6fcc',
+            'brand-orange': '#ff9500',
+            'brand-blue': '#0a84ff',
             'brand-ink': '#0b132b',
           },
           boxShadow: {
@@ -60,42 +60,42 @@
   <link rel="stylesheet" href="../css/index.css" />
 </head>
 
-<body class="font-display bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-50">
+<body class="font-display bg-gradient-to-br from-slate-100 via-slate-50 to-white text-slate-900">
   <main class="flex min-h-screen flex-col items-center justify-center px-4 py-14">
     <section class="fade-in space-y-3 text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.35em] text-brand-orange/80">Manual de procesos</p>
-      <h1 class="text-4xl font-bold leading-tight drop-shadow-sm sm:text-5xl">SERVICIO DE VIGILANCIA</h1>
-      <p class="text-lg text-slate-200">Seleccione el local donde se encuentra:</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.35em] text-brand-blue/70">Manual de procesos</p>
+      <h1 class="text-4xl font-bold leading-tight drop-shadow-sm sm:text-5xl text-brand-ink">SERVICIO DE VIGILANCIA</h1>
+      <p class="text-lg text-slate-600">Seleccione el local donde se encuentra:</p>
     </section>
 
     <section class="fade-in mt-12 grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
       <div
-        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-orange via-orange-500 to-orange-600 text-white shadow-brand-glow ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(255,102,0,0.4)] active:scale-95"
+        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_60px_rgba(0,0,0,0.12)] active:scale-95"
         onclick="crackAndRedirect(this, 'TPP1')">
-        <div class="step-icon text-3xl opacity-80 drop-shadow">&#9733;</div>
+        <div class="step-icon text-3xl text-brand-blue opacity-80">&#9733;</div>
         <span class="step-number text-3xl font-bold tracking-tight">TPP1</span>
-        <span class="text-xs uppercase tracking-[0.2em] text-white/70">Ingresar</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-slate-500">Ingresar</span>
       </div>
       <div
-        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-orange via-orange-500 to-orange-600 text-white shadow-brand-glow ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(255,102,0,0.4)] active:scale-95"
+        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_60px_rgba(0,0,0,0.12)] active:scale-95"
         onclick="crackAndRedirect(this, 'TPP2')">
-        <div class="step-icon text-3xl opacity-80 drop-shadow">&#9733;</div>
+        <div class="step-icon text-3xl text-brand-blue opacity-80">&#9733;</div>
         <span class="step-number text-3xl font-bold tracking-tight">TPP2</span>
-        <span class="text-xs uppercase tracking-[0.2em] text-white/70">Ingresar</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-slate-500">Ingresar</span>
       </div>
       <div
-        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-orange via-orange-500 to-orange-600 text-white shadow-brand-glow ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(255,102,0,0.4)] active:scale-95"
+        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_60px_rgba(0,0,0,0.12)] active:scale-95"
         onclick="crackAndRedirect(this, 'TPP3')">
-        <div class="step-icon text-3xl opacity-80 drop-shadow">&#9733;</div>
+        <div class="step-icon text-3xl text-brand-blue opacity-80">&#9733;</div>
         <span class="step-number text-3xl font-bold tracking-tight">TPP3</span>
-        <span class="text-xs uppercase tracking-[0.2em] text-white/70">Ingresar</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-slate-500">Ingresar</span>
       </div>
       <div
-        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-orange via-orange-500 to-orange-600 text-white shadow-brand-glow ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(255,102,0,0.4)] active:scale-95"
+        class="step-card relative flex h-44 w-full max-w-[13rem] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_12px_40px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_60px_rgba(0,0,0,0.12)] active:scale-95"
         onclick="crackAndRedirect(this, 'TPP4')">
-        <div class="step-icon text-3xl opacity-80 drop-shadow">&#9733;</div>
+        <div class="step-icon text-3xl text-brand-blue opacity-80">&#9733;</div>
         <span class="step-number text-3xl font-bold tracking-tight">TPP4</span>
-        <span class="text-xs uppercase tracking-[0.2em] text-white/70">Ingresar</span>
+        <span class="text-xs uppercase tracking-[0.2em] text-slate-500">Ingresar</span>
       </div>
     </section>
   </main>

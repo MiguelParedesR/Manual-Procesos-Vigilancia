@@ -17,6 +17,16 @@ async function openSelfieModal() {
   if (!modal) return;
   modal.classList.remove("hidden");
   modal.setAttribute("aria-hidden", "false");
+  const selfieBtn = document.getElementById("selfieButton");
+  if (selfieBtn) {
+    selfieBtn.classList.remove("bg-emerald-500", "text-white", "ring-emerald-200");
+    selfieBtn.classList.add(
+      "bg-white",
+      "text-brand-ink",
+      "ring-slate-200",
+      "hover:ring-brand-blue/60"
+    );
+  }
   await startCamera();
 }
 
@@ -60,19 +70,17 @@ function capturarFoto() {
   canvas.height = video.videoHeight || 1280;
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
   canvas.style.display = "block";
-
-  const preview = document.getElementById("previewPlaceholder");
-  if (preview) {
-    preview.textContent = "";
-    preview.style.background = "#fff";
-    preview.style.borderStyle = "solid";
-    preview.appendChild(canvas);
-  }
+  canvas.classList.remove("hidden");
 
   const selfieBtn = document.getElementById("selfieButton");
   if (selfieBtn) {
-    selfieBtn.classList.remove("from-brand-blue", "to-slate-900");
-    selfieBtn.classList.add("from-green-500", "to-emerald-600");
+    selfieBtn.classList.remove(
+      "bg-white",
+      "text-brand-ink",
+      "ring-slate-200",
+      "hover:ring-brand-blue/60"
+    );
+    selfieBtn.classList.add("bg-emerald-500", "text-white", "ring-emerald-200");
   }
 
   closeSelfieModal();

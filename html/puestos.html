@@ -42,11 +42,11 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Manrope"', 'system-ui', 'sans-serif'],
+            display: ['-apple-system', 'BlinkMacSystemFont', '"San Francisco"', '"Segoe UI"', 'system-ui', 'sans-serif'],
           },
           colors: {
-            'brand-orange': '#ff6600',
-            'brand-blue': '#0f6fcc',
+            'brand-orange': '#ff9500',
+            'brand-blue': '#0a84ff',
             'brand-ink': '#0b132b',
           },
         },
@@ -57,16 +57,16 @@
   <link rel="stylesheet" href="../css/puestos.css" />
 </head>
 
-<body class="font-display bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-50">
+<body class="font-display bg-gradient-to-br from-slate-100 via-slate-50 to-white text-slate-900">
   <button
-    class="btn-retorno fixed left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur transition hover:-translate-y-[1px] hover:bg-white/20"
+    class="btn-retorno fixed left-6 top-6 inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 text-sm font-semibold text-brand-ink ring-1 ring-slate-200 backdrop-blur transition hover:-translate-y-[1px] hover:bg-white"
     onclick="volverAlInicio()">&larr; Menu</button>
 
   <main class="mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center gap-8 px-4 py-14">
     <header class="space-y-3 text-center">
-      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-brand-orange/80">Puestos disponibles</p>
-      <h1 id="tituloLocal" class="text-4xl font-bold tracking-tight text-white drop-shadow">Cargando local...</h1>
-      <p class="text-base text-slate-300">Escoge un puesto para ver las funciones y checklist.</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-brand-blue/70">Puestos disponibles</p>
+      <h1 id="tituloLocal" class="text-4xl font-bold tracking-tight text-brand-ink">Cargando local...</h1>
+      <p class="text-base text-slate-500">Escoge un puesto para ver las funciones y checklist.</p>
     </header>
 
     <div id="puestosContainer"

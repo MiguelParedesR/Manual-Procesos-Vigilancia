@@ -85,8 +85,8 @@
 
 .selfie-modal__capture {
   align-self: center;
-  width: 68px;
-  height: 68px;
+  width: 64px;
+  height: 64px;
   border-radius: 999px;
   border: 6px solid rgba(255, 255, 255, 0.65);
   background: #ff6600;
@@ -97,4 +97,21 @@
 
 .selfie-modal__capture:active {
   transform: scale(0.96);
+}
+
+.selfie-trigger {
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  background: #ffffff;
+  color: #0b132b;
+}
+
+.selfie-thumb {
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+  border: 2px dashed rgba(15, 111, 204, 0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
 }

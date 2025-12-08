@@ -42,11 +42,11 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Manrope"', 'system-ui', 'sans-serif'],
+            display: ['-apple-system', 'BlinkMacSystemFont', '"San Francisco"', '"Segoe UI"', 'system-ui', 'sans-serif'],
           },
           colors: {
-            'brand-orange': '#ff6600',
-            'brand-blue': '#0f6fcc',
+            'brand-orange': '#ff9500',
+            'brand-blue': '#0a84ff',
             'brand-ink': '#0b132b',
           },
         },
@@ -57,10 +57,10 @@
   <link rel="stylesheet" href="../css/puesto.css" />
 </head>
 
-<body class="font-display bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-50">
+<body class="font-display bg-gradient-to-br from-slate-100 via-slate-50 to-white text-slate-900">
   <div class="button-container pointer-events-none fixed inset-x-6 top-6 flex items-start justify-between">
     <button
-      class="btn-retorno pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur transition hover:-translate-y-[1px] hover:bg-white/20"
+      class="btn-retorno pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 text-sm font-semibold text-brand-ink ring-1 ring-slate-200 backdrop-blur transition hover:-translate-y-[1px] hover:bg-white"
       onclick="volverAlInicio()">&larr; Menu</button>
     <button
       class="btn-volver pointer-events-auto inline-flex items-center gap-2 rounded-full bg-brand-blue px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-blue/30 transition hover:-translate-y-[1px] hover:shadow-xl"
@@ -68,7 +68,7 @@
   </div>
 
   <main class="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-6 px-4 py-20">
-    <section class="rounded-3xl bg-white/95 p-8 text-slate-900 shadow-2xl shadow-black/15 backdrop-blur">
+    <section class="rounded-3xl bg-white/95 p-8 text-slate-900 shadow-[0_22px_60px_rgba(0,0,0,0.12)] backdrop-blur">
       <h1 id="tituloPuesto" class="titulo-puesto mb-4 text-4xl font-bold tracking-tight text-brand-ink"></h1>
       <div id="descripcionPuesto" class="descripcion-puesto text-[15px] leading-7"></div>
     </section>
