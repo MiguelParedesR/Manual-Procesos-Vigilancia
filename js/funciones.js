@@ -1,6 +1,8 @@
 // funciones.js
 // Agrega esto al inicio de funciones.js
-const funcionesPorPuesto = {};
+// Usar propiedad global para que puesto.js lo lea como window.funcionesPorPuesto
+window.funcionesPorPuesto = {};
+const funcionesPorPuesto = window.funcionesPorPuesto;
 // Funciones por puesto
 
 // TPP1
@@ -319,19 +321,20 @@ function mostrarModalChecklistCompletado() {
 }
 
 // Revision de checklist
-function revisarChecklistFinal() {
-  const checkboxes = document.querySelectorAll('.card-checklist input[type="checkbox"]');
-  const todosMarcados = [...checkboxes].every(chk => chk.checked);
-  if (todosMarcados) {
-    mostrarModalChecklistCompletado();
-  }
+function revisarChecklistFinal(origen) {
+  const checkbox = origen instanceof Element ? origen : null;
+  const scope = checkbox ? checkbox.closest(".accordion") || document : document;
+  const checkboxes = scope.querySelectorAll('.card-checklist input[type="checkbox"]');
+  if (!checkboxes.length) return;
+  const todosMarcados = [...checkboxes].every((chk) => chk.checked);
+  if (todosMarcados) mostrarModalChecklistCompletado();
 }
 
 // Listener global para todos los checkboxes
 // Usar 'change' en lugar de 'click' para detectar correctamente cuando se marca un checkbox
 document.addEventListener("change", (e) => {
   if (e.target.matches('.card-checklist input[type="checkbox"]')) {
-    revisarChecklistFinal();
+    revisarChecklistFinal(e.target);
   }
 });
 

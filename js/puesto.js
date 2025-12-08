@@ -52,7 +52,7 @@ function buildAccordions() {
     const header = document.createElement("button");
     header.type = "button";
     header.className = "accordion__header";
-    header.setAttribute("aria-expanded", idx === 0 ? "true" : "false");
+    header.setAttribute("aria-expanded", "false");
     header.innerHTML = `
       <span class="accordion__title">${section.title}</span>
       <span class="accordion__icon" aria-hidden="true">&#8964;</span>
@@ -60,9 +60,6 @@ function buildAccordions() {
 
     const body = document.createElement("div");
     body.className = "accordion__body";
-    if (idx === 0) {
-      body.classList.add("open");
-    }
     section.nodes.forEach((node) => body.appendChild(node));
     enhanceChecklist(body);
 
@@ -149,6 +146,6 @@ function enhanceChecklist(root) {
 // Delegacion de eventos para los checkboxes del checklist
 document.addEventListener("change", (e) => {
   if (e.target.matches('.card-checklist input[type="checkbox"]')) {
-    revisarChecklistFinal();
+    revisarChecklistFinal(e.target);
   }
 });
