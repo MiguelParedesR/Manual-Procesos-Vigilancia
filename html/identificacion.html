@@ -103,15 +103,17 @@
 
         <div class="form-group space-y-3">
           <label class="text-sm font-semibold uppercase tracking-wide text-slate-600">Capture una selfie (rostro y torso):</label>
-          <div class="camera-box space-y-4 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 shadow-inner">
-            <video id="video" autoplay playsinline
-              class="h-full max-h-64 w-full rounded-xl border-2 border-brand-blue object-cover shadow-md"></video>
-            <canvas id="canvas" style="display:none;"
-              class="hidden h-full max-h-64 w-full rounded-xl border-2 border-brand-blue object-cover shadow-md"></canvas>
-            <button type="button" onclick="capturarFoto()"
-              class="btn-foto inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-blue to-sky-500 px-5 py-3 text-center text-base font-semibold text-white shadow-lg shadow-brand-blue/30 transition hover:-translate-y-[2px] hover:shadow-xl">&#128247;
-              Tomar Foto</button>
+          <div class="camera-box space-y-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 shadow-inner">
+            <div id="previewPlaceholder"
+              class="flex h-44 w-full items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white text-sm font-semibold text-slate-400">
+              Sin selfie tomada
+            </div>
+            <button type="button" id="selfieButton" onclick="openSelfieModal()"
+              class="btn-foto inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-slate-900 px-5 py-3 text-center text-base font-semibold text-white shadow-lg shadow-brand-blue/30 transition hover:-translate-y-[1px] hover:shadow-xl">&#128247;
+              Tomar Selfie</button>
           </div>
+          <canvas id="canvas" style="display:none;"
+            class="hidden h-full max-h-64 w-full rounded-xl border-2 border-brand-blue object-cover shadow-md"></canvas>
         </div>
 
         <button type="submit"
@@ -119,6 +121,20 @@
           Validar e Ingresar</button>
         <p id="mensaje" class="mensaje-estado text-center text-sm font-semibold text-brand-blue"></p>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal de selfie -->
+  <div id="selfieModal" class="selfie-modal hidden" aria-hidden="true">
+    <div class="selfie-modal__backdrop"></div>
+    <div class="selfie-modal__dialog">
+      <div class="selfie-modal__video-wrapper">
+        <video id="video" autoplay playsinline class="selfie-modal__video"></video>
+      </div>
+      <div class="selfie-modal__controls">
+        <button type="button" class="selfie-modal__close" onclick="closeSelfieModal()">✕</button>
+        <button type="button" class="selfie-modal__capture" onclick="capturarFoto()">●</button>
+      </div>
     </div>
   </div>
 

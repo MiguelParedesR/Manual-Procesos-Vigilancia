@@ -60,10 +60,20 @@ const puestoCardClasses = [
 
 if (local && puestosPorLocal[local]) {
   titulo.innerText = `Puestos del local ${local}`;
-  puestosPorLocal[local].forEach((puesto) => {
+  puestosPorLocal[local].forEach((puesto, index) => {
     const btn = document.createElement("button");
-    btn.textContent = puesto;
+
+    const numero = document.createElement("span");
+    numero.classList.add("puesto-number");
+    numero.textContent = String(index + 1).padStart(2, "0");
+
+    const etiqueta = document.createElement("span");
+    etiqueta.classList.add("puesto-label");
+    etiqueta.textContent = puesto;
+
     puestoCardClasses.forEach((cls) => btn.classList.add(cls));
+    btn.appendChild(numero);
+    btn.appendChild(etiqueta);
     btn.onclick = () => mostrarFuncionesPuesto(puesto);
     contenedor.appendChild(btn);
   });

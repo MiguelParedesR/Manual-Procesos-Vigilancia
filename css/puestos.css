@@ -15,26 +15,6 @@
   }
 }
 
-/* Keep numbering for puestos generados via JS */
-.enumerated {
-  counter-reset: puesto;
-}
-
-.enumerated .puesto-card::before {
-  counter-increment: puesto;
-  content: counter(puesto, decimal-leading-zero);
-  position: absolute;
-  top: 0.75rem;
-  left: 0.95rem;
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: #0f6fcc;
-  opacity: 0.8;
-  letter-spacing: 0.08em;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* Allow Tailwind layout classes to drive placement */
 .vertical-buttons {
   display: grid;
@@ -43,19 +23,36 @@
 .puesto-card {
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.25s ease;
-  padding-left: 3.8rem;
   color: #0b132b;
   font-weight: 700;
   letter-spacing: -0.01em;
   background: rgba(255, 255, 255, 0.96);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .puesto-card:hover {
   transform: translateY(-4px);
 }
 
-.puesto-card * {
-  position: relative;
-  z-index: 1;
+.puesto-number {
+  flex: 0 0 auto;
+  min-width: 2.6rem;
+  height: 2.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(15, 111, 204, 0.12);
+  color: #0f6fcc;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+
+.puesto-label {
+  flex: 1 1 auto;
+  line-height: 1.4;
 }
