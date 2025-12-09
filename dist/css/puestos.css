@@ -1,0 +1,58 @@
+/* Animations */
+.fade-in {
+  animation: fade-in 0.7s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Allow Tailwind layout classes to drive placement */
+.vertical-buttons {
+  display: grid;
+}
+
+.puesto-card {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+  color: #0b132b;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  background: rgba(255, 255, 255, 0.96);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.puesto-card:hover {
+  transform: translateY(-4px);
+}
+
+.puesto-number {
+  flex: 0 0 auto;
+  min-width: 2.6rem;
+  height: 2.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(10, 132, 255, 0.12);
+  color: #0a84ff;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+
+.puesto-label {
+  flex: 1 1 auto;
+  line-height: 1.4;
+}
