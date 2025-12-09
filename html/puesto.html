@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puesto - MANUAL DE PROCESOS</title>
+  <meta name="theme-color" content="#0f6fcc">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      safelist: [
+        "relative",
+        "w-full",
+        "rounded-2xl",
+        "bg-white/90",
+        "p-5",
+        "text-left",
+        "text-brand-ink",
+        "font-semibold",
+        "shadow-lg",
+        "shadow-black/10",
+        "ring-1",
+        "ring-white/15",
+        "backdrop-blur",
+        "transition",
+        "duration-200",
+        "hover:-translate-y-1",
+        "hover:shadow-2xl",
+        "hover:ring-brand-blue/50",
+        "focus:outline-none",
+        "focus:ring-2",
+        "focus:ring-brand-blue/40",
+        "focus:ring-offset-2",
+        "focus:ring-offset-slate-100",
+      ],
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['-apple-system', 'BlinkMacSystemFont', '"San Francisco"', '"Segoe UI"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            'brand-orange': '#ff9500',
+            'brand-blue': '#0a84ff',
+            'brand-ink': '#0b132b',
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="font-display bg-gradient-to-br from-slate-100 via-slate-50 to-white text-slate-900">
+  <div class="button-container pointer-events-none fixed inset-x-4 top-4 flex items-start justify-between sm:inset-x-8 sm:top-6">
+    <button
+      class="btn-retorno pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 text-sm font-semibold text-brand-ink ring-1 ring-slate-200 backdrop-blur transition hover:-translate-y-[1px] hover:bg-white"
+      onclick="volverAlInicio()">&larr; Menu</button>
+    <button
+      class="btn-volver pointer-events-auto inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-blue ring-1 ring-brand-blue/30 shadow-lg shadow-brand-blue/10 transition hover:-translate-y-[1px] hover:shadow-xl hover:bg-brand-blue/5"
+      onclick="volverAPuestos()">Volver a los puestos</button>
+  </div>
+
+  <main class="page-shell mx-auto flex min-h-screen w-full max-w-screen-xl flex-col gap-10 px-4 pb-12 pt-28 sm:px-10 sm:pt-28 lg:px-16">
+    <section class="puesto-panel rounded-3xl bg-white/95 text-slate-900 shadow-[0_22px_60px_rgba(0,0,0,0.10)] backdrop-blur w-full">
+      <h1 id="tituloPuesto" class="titulo-puesto mb-6 text-4xl font-bold tracking-tight text-brand-ink"></h1>
+      <div id="descripcionPuesto" class="descripcion-puesto w-full text-[15px] leading-7 lg:text-base"></div>
+    </section>
+  </main>
+
+  <!-- ORDEN CORRECTO DE LOS SCRIPTS -->
+  <script src="../assets/js/app.js"></script>
+</body>
+
+</html>
