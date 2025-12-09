@@ -4,6 +4,9 @@ function irAIdentificacion(local) {
 }
 
 function volverAlInicio() {
+  localStorage.removeItem("localSeleccionado");
+  localStorage.removeItem("puestoSeleccionado");
+  localStorage.removeItem("dni");
   window.location.href = "index.html";
 }
 
@@ -60,3 +63,6 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
+
+// Compatibilidad con atributos inline
+window.volverAlInicio = volverAlInicio;
