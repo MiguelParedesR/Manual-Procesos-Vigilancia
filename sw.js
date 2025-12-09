@@ -1,34 +1,50 @@
-const CACHE_NAME = "V1-Manual de Agentes-42";
-const OFFLINE_URL = "html/index.html";
-const ASSETS = [
-  "html/index.html",
-  "html/identificacion.html",
-  "html/puestos.html",
-  "html/puesto.html",
-  "manifest.webmanifest",
-  "css/index.css",
-  "css/tailwind.css",
-  "css/identificacion.css",
-  "css/puestos.css",
-  "css/puesto.css",
-  "js/main.js",
-  "js/index.js",
-  "js/puestos.js",
-  "js/puesto.js",
-  "js/funciones.js",
-  "js/camera.js",
-  "js/supabase.js",
-  "assets/logo.png",
-  "assets/fondo-checklist.png",
+// Service worker configured for static hosting (dist/ is the published root, e.g., GitHub Pages).
+// All cached URLs are relative to that root and reference files that exist under dist/.
+const CACHE_NAME = "manual-vigilancia-v2";
+const OFFLINE_URL = "./html/index.html";
+const URLS_TO_CACHE = [
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./assets/css/style.css",
+  "./assets/js/app.js",
+  "./assets/logo.png",
+  "./assets/fondo-checklist.png",
+  "./css/index.css",
+  "./css/puestos.css",
+  "./css/puesto.css",
+  "./css/identificacion.css",
+  "./css/tailwind.css",
+  "./css/tw-input.css",
+  "./html/index.html",
+  "./html/puestos.html",
+  "./html/puesto.html",
+  "./html/identificacion.html",
+  "./js/index.js",
+  "./js/main.js",
+  "./js/menuModal.js",
+  "./js/puestos.js",
+  "./js/puesto.js",
+  "./js/supabase.js",
+  "./js/backup.js",
+  "./js/camera.js",
+  "./js/funciones.js",
 ];
-
-const ASSET_URLS = ASSETS.map((path) => new URL(path, self.location.origin).toString());
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then((cache) => cache.addAll(ASSET_URLS))
+      .then((cache) =>
+        Promise.all(
+          URLS_TO_CACHE.map((url) =>
+            cache.add(url).catch((err) => {
+              console.warn("[SW] Failed to cache", url, err);
+              return null;
+            })
+          )
+        )
+      )
       .then(() => self.skipWaiting())
   );
 });
@@ -64,7 +80,7 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return networkResponse;
         })
-        .catch(() => caches.match(new URL(OFFLINE_URL, self.location.origin)));
+        .catch(() => caches.match(OFFLINE_URL));
     })
   );
 });
