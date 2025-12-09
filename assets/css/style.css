@@ -1,7 +1,0 @@
-/* Paquete unificado para GitHub Pages.
-   Incluye los estilos compilados existentes del proyecto. */
-@import "../../css/tailwind.css";
-@import "../../css/index.css";
-@import "../../css/puestos.css";
-@import "../../css/puesto.css";
-@import "../../css/identificacion.css";
