@@ -1,89 +1,66 @@
-// ---- Función global para los botones del índice ----
-function crackAndRedirect(button, local) {
-  try {
-    // Pequeño efecto visual opcional
-    if (button) {
-      button.disabled = true;
-      button.classList.add("scale-95", "opacity-80");
-    }
-
-    // Siempre vamos a /html/puestos.html con el local como query
-    const url = `/html/puestos.html?local=${encodeURIComponent(local)}`;
-
-    // Pequeño delay para que se note la animación
-    setTimeout(() => {
-      window.location.href = url;
-    }, 180);
-  } catch (e) {
-    console.error("Error en crackAndRedirect:", e);
-    // Fallback duro
-    window.location.href = `/html/puestos.html?local=${encodeURIComponent(local)}`;
-  }
-}
-
-// Exponerla explícitamente en window para que el onclick la vea
-window.crackAndRedirect = crackAndRedirect;
-
-// ---- Cargador de scripts por página (adaptado a /dist en Cloudflare) ----
 (function () {
   const loadScript = (src) =>
     new Promise((resolve, reject) => {
-      const s = document.createElement("script");
-      s.src = src;
-      s.async = false; // mantener orden
-      s.onload = resolve;
-      s.onerror = reject;
-      document.head.appendChild(s);
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = false; // mantener el orden de ejecución
+      script.onload = resolve;
+      script.onerror = () => reject(new Error(`No se pudo cargar ${src}`));
+      document.head.appendChild(script);
     });
 
-  // Normalizar la ruta actual
-  let path = window.location.pathname.toLowerCase();
+  const pathname = window.location.pathname.replace(/\\+/g, "/");
+  const cleanedPath = pathname.endsWith("/") && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+  const segments = cleanedPath.split("/").filter(Boolean);
+  let page = segments.pop() || "";
 
-  // Quitar "/" final si no es la raíz
-  if (path.length > 1 && path.endsWith("/")) {
-    path = path.slice(0, -1);
-  }
-
-  // Obtener el último segmento
-  let page = path.split("/").pop() || "";
-
-  // Si no hay extensión, asumir ".html"
   if (!page || !page.includes(".")) {
-    if (!page) {
-      // raíz "/"
-      page = "index.html";
-    } else {
-      // por ejemplo "/html/identificacion" -> "identificacion.html"
-      page = page + ".html";
-    }
+    page = `${page || "index"}.html`;
   }
 
-  console.log("[app.js] path:", path, "→ page detectada:", page);
+  const isHtmlPage = segments.includes("html");
+  const prefix = isHtmlPage ? ".." : ".";
 
-  // Rutas ABSOLUTAS porque en Cloudflare Pages /dist se sirve como raíz "/"
   const scriptsPorPagina = {
     "index.html": [
-      "/js/funciones.js",
-      "/js/main.js",
-      "/js/index.js",
+      `${prefix}/js/funciones.js`,
+      `${prefix}/js/main.js`,
+      `${prefix}/js/index.js`,
     ],
     "puestos.html": [
-      "/js/main.js",
-      "/js/puestos.js",
+      `${prefix}/js/main.js`,
+      `${prefix}/js/puestos.js`,
     ],
     "puesto.html": [
-      "/js/funciones.js",
-      "/js/puesto.js",
-      "/js/main.js",
+      `${prefix}/js/funciones.js`,
+      `${prefix}/js/puesto.js`,
+      `${prefix}/js/main.js`,
     ],
     "identificacion.html": [
       "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-      "/js/supabase.js",
-      "/js/main.js",
-      "/js/camera.js",
+      `${prefix}/js/supabase.js`,
+      `${prefix}/js/main.js`,
+      `${prefix}/js/camera.js`,
     ],
   };
 
   const lista = scriptsPorPagina[page] || [];
-  lista.reduce((p, src) => p.then(() => loadScript(src)), Promise.resolve());
+
+  lista
+    .reduce((promesa, src) => promesa.then(() => loadScript(src)), Promise.resolve())
+    .then(() => {
+      // Asegurar que las funciones usadas por los atributos HTML estén disponibles
+      if (typeof window.crackAndRedirect !== "function" && typeof crackAndRedirect === "function") {
+        window.crackAndRedirect = crackAndRedirect;
+      }
+      if (typeof window.volverAlInicio !== "function" && typeof volverAlInicio === "function") {
+        window.volverAlInicio = volverAlInicio;
+      }
+      if (typeof window.guardarDatosSupabase !== "function" && typeof guardarDatosSupabase === "function") {
+        window.guardarDatosSupabase = guardarDatosSupabase;
+      }
+    })
+    .catch((error) => {
+      console.error("Error cargando scripts dinámicos:", error);
+    });
 })();

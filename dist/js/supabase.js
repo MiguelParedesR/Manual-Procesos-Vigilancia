@@ -40,3 +40,7 @@ async function guardarDatosSupabase({ empresa, nombre, dni, selfieBase64 }) {
   localStorage.setItem("dni", dni);
   return { success: true };
 }
+
+// Exponer helpers en window para los manejadores inline
+window.supabaseClient = supabase;
+window.guardarDatosSupabase = guardarDatosSupabase;

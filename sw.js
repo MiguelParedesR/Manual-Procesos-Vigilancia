@@ -1,4 +1,4 @@
-const CACHE_NAME = "V1-Manual de Agentes-46";
+const CACHE_NAME = "V1-Manual de Agentes-44";
 const OFFLINE_URL = "html/index.html";
 const ASSETS = [
   "html/index.html",
@@ -28,7 +28,16 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then((cache) => cache.addAll(ASSET_URLS))
+      .then((cache) =>
+        Promise.all(
+          URLS_TO_CACHE.map((url) =>
+            cache.add(url).catch((err) => {
+              console.warn("[SW] Failed to cache", url, err);
+              return null;
+            })
+          )
+        )
+      )
       .then(() => self.skipWaiting())
   );
 });
@@ -64,7 +73,7 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return networkResponse;
         })
-        .catch(() => caches.match(new URL(OFFLINE_URL, self.location.origin)));
+        .catch(() => caches.match(OFFLINE_URL));
     })
   );
 });
