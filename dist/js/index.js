@@ -5,3 +5,5 @@ function crackAndRedirect(element, local) {
     window.location.href = "identificacion.html";
   }, 600);
 }
+
+window.crackAndRedirect = crackAndRedirect;
