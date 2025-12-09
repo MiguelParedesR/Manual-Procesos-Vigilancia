@@ -1,4 +1,4 @@
-const CACHE_NAME = "V1-Manual de Agentes-42";
+const CACHE_NAME = "V1-Manual de Agentes-43";
 const OFFLINE_URL = "html/index.html";
 const ASSETS = [
   "html/index.html",
