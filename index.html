@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=./html/index.html">
-  <title>Redirigiendo...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MANUAL DE PROCESOS - SERVICIO VIGILANCIA</title>
+  <meta name="theme-color" content="#0f6fcc">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
-  <p>Redirigiendo a la aplicación... Si no sucede automáticamente, <a href="./html/index.html">haz clic aquí</a>.</p>
+
+<body class="font-display bg-gradient-to-br from-slate-100 via-slate-50 to-white text-slate-900">
+  <main class="flex min-h-screen flex-col items-center justify-center px-4 py-14">
+    <section class="fade-in space-y-3 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.35em] text-brand-blue/70">Manual de procesos</p>
+      <h1 class="text-4xl font-bold leading-tight drop-shadow-sm sm:text-5xl text-brand-ink">SERVICIO DE VIGILANCIA</h1>
+      <p class="text-lg text-slate-600">Seleccione el local donde se encuentra:</p>
+    </section>
+
+    <section class="fade-in mt-10 grid w-full max-w-4xl grid-cols-1 gap-4 place-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <button type="button"
+        class="step-card relative flex h-32 w-full max-w-[12rem] flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50"
+        onclick="crackAndRedirect(this, 'TPP1')" aria-label="Ingresar al local TPP1">
+        <div class="step-icon flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10 text-2xl text-brand-blue">▸</div>
+        <span class="step-number text-3xl font-bold tracking-tight">TPP1</span>
+        <span class="text-sm font-semibold text-slate-600">Ingresar</span>
+      </button>
+      <button type="button"
+        class="step-card relative flex h-32 w-full max-w-[12rem] flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50"
+        onclick="crackAndRedirect(this, 'TPP2')" aria-label="Ingresar al local TPP2">
+        <div class="step-icon flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10 text-2xl text-brand-blue">▸</div>
+        <span class="step-number text-3xl font-bold tracking-tight">TPP2</span>
+        <span class="text-sm font-semibold text-slate-600">Ingresar</span>
+      </button>
+      <button type="button"
+        class="step-card relative flex h-32 w-full max-w-[12rem] flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50"
+        onclick="crackAndRedirect(this, 'TPP3')" aria-label="Ingresar al local TPP3">
+        <div class="step-icon flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10 text-2xl text-brand-blue">▸</div>
+        <span class="step-number text-3xl font-bold tracking-tight">TPP3</span>
+        <span class="text-sm font-semibold text-slate-600">Ingresar</span>
+      </button>
+      <button type="button"
+        class="step-card relative flex h-32 w-full max-w-[12rem] flex-col items-center justify-center overflow-hidden rounded-2xl bg-white text-brand-ink shadow-[0_10px_30px_rgba(0,0,0,0.08)] ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50"
+        onclick="crackAndRedirect(this, 'TPP4')" aria-label="Ingresar al local TPP4">
+        <div class="step-icon flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue/10 text-2xl text-brand-blue">▸</div>
+        <span class="step-number text-3xl font-bold tracking-tight">TPP4</span>
+        <span class="text-sm font-semibold text-slate-600">Ingresar</span>
+      </button>
+    </section>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
 </body>
+
 </html>
