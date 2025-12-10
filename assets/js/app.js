@@ -38,9 +38,9 @@
     ],
     "identificacion.html": [
       "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2",
-      `${prefix}./js/supabase.js`,
-      `${prefix}./js/main.js`,
-      `${prefix}./js/camera.js`,
+      `${prefix}/js/supabase.js`,
+      `${prefix}/js/main.js`,
+      `${prefix}/js/camera.js`,
     ],
   };
 
