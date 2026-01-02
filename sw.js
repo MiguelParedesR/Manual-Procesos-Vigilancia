@@ -1,6 +1,6 @@
 // Service worker configurado para hosting estatico (raiz del repositorio / GitHub Pages).
 // Todas las rutas cacheadas son relativas a la raiz publicada.
-const CACHE_NAME = "manual-vigilancia-v14";
+const CACHE_NAME = "manual-vigilancia-v15";
 const OFFLINE_URL = "./html/index.html";
 const URLS_TO_CACHE = [
   "./",

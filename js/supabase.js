@@ -1,46 +1,51 @@
-// Inicializa Supabase
-const supabaseUrl = 'https://qjefbngewwthawycvutl.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqZWZibmdld3d0aGF3eWN2dXRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxMjA2MTUsImV4cCI6MjA2MTY5NjYxNX0.q4J3bF6oC7x9dhW5cwHr-qtqSSqI_8ju7fHvyfO_Sh0';
-if (!window.supabase) {
-  throw new Error("❌ Supabase JS no está cargado. Verifique que la librería se haya importado.");
-}
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
-
-// Función reutilizable para guardar vigilante y selfie en Supabase
-async function guardarDatosSupabase({ empresa, nombre, dni, selfieBase64 }) {
-  const local = localStorage.getItem("localSeleccionado");
-
-  // Convertir base64 a Blob
-  const blob = await (await fetch(selfieBase64)).blob();
-  const filePath = `selfies/${dni}_${Date.now()}.jpg`;
-
-  const { data: fileData, error: fileError } = await supabase.storage
-    .from("selfies")
-    .upload(filePath, blob, { contentType: "image/jpeg" });
-
-  if (fileError) {
-    throw new Error("❌ Error al subir la selfie: " + fileError.message);
+﻿// Inicializa Supabase
+(function () {
+  const supabaseUrl = 'https://qjefbngewwthawycvutl.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqZWZibmdld3d0aGF3eWN2dXRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYxMjA2MTUsImV4cCI6MjA2MTY5NjYxNX0.q4J3bF6oC7x9dhW5cwHr-qtqSSqI_8ju7fHvyfO_Sh0';
+  if (!window.supabase) {
+    throw new Error("Supabase JS no esta cargado. Verifique que la libreria se haya importado.");
   }
 
-  const { error: insertError } = await supabase.from("vigilantes").insert([
-    {
-      nombre,
-      dni,
-      empresa,
-      local,
-      foto_url: fileData.path,
-      timestamp: new Date().toISOString()
+  if (!window.supabaseClient) {
+    window.supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+  }
+  const supabaseClient = window.supabaseClient;
+
+  // Funcion reutilizable para guardar vigilante y selfie en Supabase
+  async function guardarDatosSupabase({ empresa, nombre, dni, selfieBase64 }) {
+    const local = localStorage.getItem("localSeleccionado");
+
+    // Convertir base64 a Blob
+    const blob = await (await fetch(selfieBase64)).blob();
+    const filePath = `selfies/${dni}_${Date.now()}.jpg`;
+
+    const { data: fileData, error: fileError } = await supabaseClient.storage
+      .from("selfies")
+      .upload(filePath, blob, { contentType: "image/jpeg" });
+
+    if (fileError) {
+      throw new Error("Error al subir la selfie: " + fileError.message);
     }
-  ]);
 
-  if (insertError) {
-    throw new Error("❌ Error a guardar los datos: " + insertError.message);
+    const { error: insertError } = await supabaseClient.from("vigilantes").insert([
+      {
+        nombre,
+        dni,
+        empresa,
+        local,
+        foto_url: fileData.path,
+        timestamp: new Date().toISOString()
+      }
+    ]);
+
+    if (insertError) {
+      throw new Error("Error al guardar los datos: " + insertError.message);
+    }
+
+    localStorage.setItem("dni", dni);
+    return { success: true };
   }
 
-  localStorage.setItem("dni", dni);
-  return { success: true };
-}
-
-// Exponer helpers en window para los manejadores inline
-window.supabaseClient = supabase;
-window.guardarDatosSupabase = guardarDatosSupabase;
+  // Exponer helpers en window para los manejadores inline
+  window.guardarDatosSupabase = guardarDatosSupabase;
+})();
